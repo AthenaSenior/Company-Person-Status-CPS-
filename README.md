@@ -1,2 +1,2 @@
 # Company-Person-Status-CPS-
-Git Repository for CPS Project
+Git Repository for CPS Projectt
