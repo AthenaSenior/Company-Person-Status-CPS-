@@ -32,5 +32,14 @@ namespace Company_Person_Status__CPS_
         {
 
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.ShowDialog();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

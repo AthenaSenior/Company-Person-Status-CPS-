@@ -1,0 +1,83 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>1)What is CPS and how does it work?
+-CPS is a desktop application that allows employers to track the away and online durations of their employees. All users in the system can see others' live status when they login. Employer(s) can see the total away durations for current day, week and month of anyone in the special panel of theirs.
+
+2)How to enable CPS for my company?
+-First, you have to purchase CPS for your company. After that the developer team of CPS requests the list of all employees and employers in your company.
+
+3)What are the major features of CPS?
+-Automatic opening after computer opens 
+-Everyone can see the current status of each employee (Available or Away). Thus, when employees and employers want to contact anyone from the organization instantly, they will have preliminary information about their ‘afk’ status.
+-User-friendly and attractive interface 
+-Important information will not be kept against potential data leaks
+-Special screening for superior units (Boss, Ceo, Manager etc.) as we shown in our mockups.
+-Auto change in case of forgetting to change status (From mouse activity/inactivity detection)
+-Advanced admin panel for tracking daily, weekly and monthly away times (current d/w/m only), add/remove employees for future
+-Automatically go offline when program is closed
+
+4)What are the explanations of Statusses?
+-Online: Means the user is currently using the computer either  user can change it by clicking the button or any mouse activity.
+-Away: Means user is not using the computer right now. User can change it with clicking the "away" button or it can occur when there is no activity more than 1 minute on mouse
+-Offline: Means user close the program or computer
+</value>
+  </data>
+</root>
