@@ -30,7 +30,8 @@ namespace Company_Person_Status__CPS_
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
         }
         private void button2_Click(object sender, EventArgs e)
         {
