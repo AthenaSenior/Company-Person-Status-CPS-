@@ -1,0 +1,37 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Company_Person_Status__CPS_
+{
+    public class User
+    {
+        [JsonProperty(PropertyName = "AuthorizationLevelId", NullValueHandling = NullValueHandling.Ignore)]
+        public int AuthorizationLevelId { get; set; }
+
+        [JsonProperty(PropertyName = "AwayFor", NullValueHandling = NullValueHandling.Ignore)]
+        public int AwayFor { get; set; }
+
+        [JsonProperty(PropertyName = "FullName", NullValueHandling = NullValueHandling.Ignore)]
+        public string FullName { get; set; }
+
+        [JsonProperty(PropertyName = "Password", NullValueHandling = NullValueHandling.Ignore)]
+        public string Password { get; set; }
+
+        [JsonProperty(PropertyName = "StatusId", NullValueHandling = NullValueHandling.Ignore)]
+        public int StatusId { get; set; }
+
+        [JsonProperty(PropertyName = "ThisMonthAwayDuration", NullValueHandling = NullValueHandling.Ignore)]
+        public int ThisMonthAwayDuration { get; set; }
+
+        [JsonProperty(PropertyName = "ThisWeekAwayDuration", NullValueHandling = NullValueHandling.Ignore)]
+        public int ThisWeekAwayDuration { get; set; }
+
+        [JsonProperty(PropertyName = "TodaysAwayDuration", NullValueHandling = NullValueHandling.Ignore)]
+        public int TodaysAwayDuration { get; set; }
+
+        [JsonProperty(PropertyName = "Username", NullValueHandling = NullValueHandling.Ignore)]
+        public string Username { get; set; }
+    }
+}

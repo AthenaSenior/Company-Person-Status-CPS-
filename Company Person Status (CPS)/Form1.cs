@@ -12,6 +12,7 @@ namespace Company_Person_Status__CPS_
 {
     public partial class Form1 : Form
     {
+        public User loggedInUser;
         public Form1()
         {
             InitializeComponent();
@@ -25,12 +26,13 @@ namespace Company_Person_Status__CPS_
             button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;      
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
+            loginForm.Owner = this;
             loginForm.ShowDialog();
         }
         private void button2_Click(object sender, EventArgs e)
@@ -41,6 +43,59 @@ namespace Company_Person_Status__CPS_
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void userLoggedIn(User user)
+        {
+            loggedInUser = user;
+            if (loggedInUser != null)
+            {
+                label6.Text = loggedInUser.FullName;
+                label3.ForeColor = Color.Green;
+                label3.Text = "Online";
+                ControlButton.BackColor = Color.Yellow;
+                ControlButton.Text = "Go Away";
+
+                switch (loggedInUser.AuthorizationLevelId)
+                {
+                    case (int) AuthorizationTypes.Employee:
+                        {
+                            AdminPanelButton.Visible = false;
+                            break;
+                        }
+                    case (int) AuthorizationTypes.Employer:
+                        {
+                            AdminPanelButton.Text = "Admin Panel";
+                            AdminPanelButton.Visible = true;
+                            break;
+                        }
+                }
+            }
+        }
+
+        private void ControlButton_Click(object sender, EventArgs e)
+        {
+            switch(label3.Text)
+            {
+                case "Online":
+                    {
+                        label3.Text = "Away";
+                        label3.ForeColor = Color.Yellow;
+                        ControlButton.BackColor = Color.Green;
+                        ControlButton.Text = "Go Online";
+                        label4.Visible = true;
+                        break;
+                    }
+                case "Away":
+                    {
+                        label3.Text = "Online";
+                        label3.ForeColor = Color.Green;
+                        ControlButton.BackColor = Color.Yellow;
+                        ControlButton.Text = "Go Away";
+                        label4.Visible = false;
+                        break;
+                    }
+            }
         }
     }
 }
