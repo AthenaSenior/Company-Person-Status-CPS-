@@ -7,6 +7,9 @@ namespace Company_Person_Status__CPS_
 {
     public class User
     {
+        [JsonProperty(PropertyName = "Id", NullValueHandling = NullValueHandling.Ignore)]
+        public int Id { get; set; }
+
         [JsonProperty(PropertyName = "AuthorizationLevelId", NullValueHandling = NullValueHandling.Ignore)]
         public int AuthorizationLevelId { get; set; }
 

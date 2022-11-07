@@ -58,15 +58,15 @@ namespace Company_Person_Status__CPS_
 
                 switch (loggedInUser.AuthorizationLevelId)
                 {
-                    case (int) AuthorizationTypes.Employee:
-                        {
-                            AdminPanelButton.Visible = false;
-                            break;
-                        }
                     case (int) AuthorizationTypes.Employer:
                         {
                             AdminPanelButton.Text = "Admin Panel";
                             AdminPanelButton.Visible = true;
+                            break;
+                        }
+                    default:
+                        {
+                            AdminPanelButton.Visible = false;
                             break;
                         }
                 }
@@ -96,6 +96,17 @@ namespace Company_Person_Status__CPS_
                         break;
                     }
             }
+        }
+
+        private void AdminPanelButton_Click(object sender, EventArgs e)
+        {
+            AdminPanelForm apf = new AdminPanelForm();
+            apf.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

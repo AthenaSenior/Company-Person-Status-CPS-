@@ -377,6 +377,7 @@ namespace Company_Person_Status__CPS_
             this.AdminPanelButton.TabIndex = 5;
             this.AdminPanelButton.Text = "-";
             this.AdminPanelButton.UseVisualStyleBackColor = false;
+            this.AdminPanelButton.Click += new System.EventHandler(this.AdminPanelButton_Click);
             // 
             // ControlButton
             // 
@@ -434,6 +435,7 @@ namespace Company_Person_Status__CPS_
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnkaMEE Inc. - CPS";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

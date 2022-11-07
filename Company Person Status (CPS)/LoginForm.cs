@@ -18,8 +18,6 @@ namespace Company_Person_Status__CPS_
     public partial class LoginForm : Form
     {
         // Variables
-        int iteration;
-
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret= "krI2GcYbBhPh2KkQ3TfoLb4I6LEXYlvt6HMosQZP",
@@ -49,7 +47,6 @@ namespace Company_Person_Status__CPS_
 
         private void button1_Click(object sender, EventArgs e) // Check User and Login
         {
-            iteration = 0;
             FirebaseResponse clientResponse = client.Get("");
             Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string,User>>(clientResponse.Body.ToString());
 
@@ -62,6 +59,7 @@ namespace Company_Person_Status__CPS_
 
                         var loggedInUser = new User
                         {
+                            Id = user.Value.Id,
                             AuthorizationLevelId = user.Value.AuthorizationLevelId,
                             AwayFor = user.Value.AwayFor,
                             FullName = user.Value.FullName,
@@ -73,20 +71,16 @@ namespace Company_Person_Status__CPS_
                             Username = user.Value.Username
                         };
 
-                        client.UpdateTaskAsync(user.Value.FullName, loggedInUser);
+                        client.UpdateTaskAsync("/User"+loggedInUser.Id, loggedInUser);
                         (this.Owner as Form1).panel2.Visible = true;
                         (this.Owner as Form1).userLoggedIn(loggedInUser);
                         break;
                     }
                     else
                     {
-                        if (iteration == allUsers.Count - 1)
-                        {
-                            label3.Visible = true;
-                        }
+                        label3.Visible = true;
                     }
                 }
-                iteration++;
             }
         }
     }

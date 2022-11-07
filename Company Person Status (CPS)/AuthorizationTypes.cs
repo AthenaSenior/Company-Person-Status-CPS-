@@ -7,8 +7,8 @@ namespace Company_Person_Status__CPS_
     enum AuthorizationTypes
     {
         Employee = 1,
-        CEO = 2,
-        Employer = 3,
-        Manager = 4
+        Manager = 2,
+        CEO = 3,
+        Employer = 4
     }
 }
