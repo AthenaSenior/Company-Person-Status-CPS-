@@ -59,7 +59,7 @@
   </resheader>
   <data name="label22.Text" xml:space="preserve">
     <value>
-Company Person Status is a desktop application that allows employers to track the away and online durations of their employees. 
+Company Person Status is a desktop application that allows employers to track the away durations of their employees. 
 Also, you can see all other users' live status.
 
 This section contains guidelines for using CPS and aiming to help you. To use CPS properly, follow the instructions below:
@@ -80,13 +80,15 @@ This section contains guidelines for using CPS and aiming to help you. To use CP
 
 -&gt; If you have authorization, there would be a Admin Panel button at right top. With that button, you can reach admin panel.
 
--&gt; In admin panel, you will be able to track daily, weekly and monthly away data of users. Also, you can add/edit/remove users from system.</value>
+-&gt; In admin panel, you will be able to track daily, weekly and monthly away data of users.  Also, you can add/edit/remove users
+ from the system and reset the away durations of user(s).</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>- Online: Means the user is currently using the computer either user can change it by clicking the button or any mouse activity.
-- Away: Means user is not using the computer right now. User can go on this state by clicking the "away" button or it can occur 
+    <value>- Online: Means the user is currently using the computer and user can go on this state by clicking the "Go Online" button or
+any mouse activity.
+- Away: Means user is not using the computer right now. User can go on this state by clicking the "Go Away" button or it can occur 
 when there is no activity more than 1 minute on mouse.
-- Offline: Means user close the program or computer. (Sometimes it can occur by connection problems)
+- Offline: Means user close the program or computer. (Also it can occur by connection problems)
 </value>
   </data>
   <data name="label13.Text" xml:space="preserve">

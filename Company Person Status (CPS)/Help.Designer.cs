@@ -116,7 +116,7 @@
             this.label22.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label22.Location = new System.Drawing.Point(6, 25);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(759, 345);
+            this.label22.Size = new System.Drawing.Size(687, 360);
             this.label22.TabIndex = 1;
             this.label22.Text = resources.GetString("label22.Text");
             // 
@@ -196,20 +196,20 @@
             this.label19.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.Location = new System.Drawing.Point(19, 527);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(410, 15);
+            this.label19.Size = new System.Drawing.Size(412, 15);
             this.label19.TabIndex = 18;
-            this.label19.Text = "You can also edit employers\' names and passwords from CPS Admin Panel.";
+            this.label19.Text = "You can also edit employers\' names and usernames from CPS Admin Panel.";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(19, 472);
+            this.label18.Location = new System.Drawing.Point(19, 475);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(507, 30);
+            this.label18.Size = new System.Drawing.Size(516, 30);
             this.label18.TabIndex = 17;
-            this.label18.Text = "For employers, CPS has a admin panel feature to add or remove employees from the " +
-    "system. \r\nYou can control your employees\' CPS accounts via admin panel.";
+            this.label18.Text = "For employers, CPS has a admin panel feature to add, remove or edit employees in " +
+    "the system. \r\nYou can control your employees\' CPS accounts via admin panel.";
             // 
             // label17
             // 
@@ -217,7 +217,7 @@
             this.label17.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(19, 382);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(686, 60);
+            this.label17.Size = new System.Drawing.Size(706, 75);
             this.label17.TabIndex = 16;
             this.label17.Text = resources.GetString("label17.Text");
             // 
@@ -227,23 +227,23 @@
             this.label16.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(19, 326);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(634, 30);
+            this.label16.Size = new System.Drawing.Size(643, 30);
             this.label16.TabIndex = 15;
             this.label16.Text = "Since CPS requires constant internet connection and working computer, you must co" +
-    "ntact with your employer fastly. \r\nHe/she will ignore this offline process and c" +
-    "ount it as online.";
+    "ntact with your employer quickly. \r\nHe/she will ignore this offline process and " +
+    "count it as online.";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(22, 271);
+            this.label15.Location = new System.Drawing.Point(19, 271);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(692, 30);
+            this.label15.Size = new System.Drawing.Size(704, 30);
             this.label15.TabIndex = 14;
-            this.label15.Text = "Yes, you can. As an admin, you can reset all time away durations (includes daily," +
-    " weekly and monthly) via button at admin panel. \r\nThis operation is irreversible" +
-    ".";
+            this.label15.Text = "Yes, you can. As an admin, you can reset all time away durations of all users or " +
+    "a specific user (includes daily, weekly and monthly)\r\nvia button at admin panel." +
+    " This operation is irreversible.";
             // 
             // label14
             // 
@@ -333,7 +333,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(7, 457);
+            this.label6.Location = new System.Drawing.Point(7, 460);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(590, 15);
             this.label6.TabIndex = 5;
