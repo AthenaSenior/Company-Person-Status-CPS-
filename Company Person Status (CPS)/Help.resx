@@ -57,23 +57,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label17.Text" xml:space="preserve">
-    <value>- Online: Means the user is currently using the computer either user can change it by clicking the button or any mouse activity.
-- Away: Means user is not using the computer right now. User can go on this state by clicking the "away" button or it can occur 
-when there is no activity more than 1 minute on mouse.
-- Offline: Means user close the program or computer. (Sometimes it can occur by connection problems)
-</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Yes. If you change your status as away, your name becomes *Yourname* - Away for 00:00:01... You can track your current away 
-time by this. However, if you want to see your current day's away data, you need to click the small 'info' button at the top right. 
-Then, you can see your all data we kept for you, including your away data for current day.</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>CPS is a desktop application that allows employers to track the away durations of their employees. 
-All users in the system can see others' live status when they login. Employer(s) can see the total away durations for current day, 
-week and month of anyone in the special panel of theirs. To start using, all you have to is login to the system.</value>
-  </data>
   <data name="label22.Text" xml:space="preserve">
     <value>
 Company Person Status is a desktop application that allows employers to track the away and online durations of their employees. 
@@ -98,6 +81,23 @@ This section contains guidelines for using CPS and aiming to help you. To use CP
 -&gt; If you have authorization, there would be a Admin Panel button at right top. With that button, you can reach admin panel.
 
 -&gt; In admin panel, you will be able to track daily, weekly and monthly away data of users. Also, you can add/edit/remove users from system.</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>- Online: Means the user is currently using the computer either user can change it by clicking the button or any mouse activity.
+- Away: Means user is not using the computer right now. User can go on this state by clicking the "away" button or it can occur 
+when there is no activity more than 1 minute on mouse.
+- Offline: Means user close the program or computer. (Sometimes it can occur by connection problems)
+</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Yes. If you change your status as away, your name becomes *Yourname* - Away for 00:00:01... You can track your current away 
+time by this. However, if you want to see your current day's away data, you need to click the small 'info' button at the top right. 
+Then, you can see your all data we kept for you, including your away data for current day.</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>CPS is a desktop application that allows employers to track the away durations of their employees. 
+All users in the system can see others' live status when they login. Employer(s) can see the total away durations for current day, 
+week and month of anyone in the special panel of theirs. To start using, all you have to is login to the system.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

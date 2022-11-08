@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Company_Person_Status__CPS_
+﻿namespace Company_Person_Status__CPS_
 {
     enum StatusTypes
     {

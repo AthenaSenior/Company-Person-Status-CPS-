@@ -4,10 +4,6 @@ using FireSharp.Response;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Company_Person_Status__CPS_
@@ -50,6 +46,7 @@ namespace Company_Person_Status__CPS_
                 ThisWeekAwayDuration = 0,
                 TodaysAwayDuration = 0,
                 Username = textBox2.Text,
+                isDeleted = false
             };
             client.SetTaskAsync("/User"+newUser.Id, newUser);
             (this.Owner as AdminPanelForm).listBox1.Items.Add(newUser.FullName);

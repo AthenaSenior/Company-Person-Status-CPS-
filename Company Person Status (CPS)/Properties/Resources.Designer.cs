@@ -113,6 +113,16 @@ namespace Company_Person_Status__CPS_.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap _899103 {
+            get {
+                object obj = ResourceManager.GetObject("899103", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap AnkameeLogo {
             get {
                 object obj = ResourceManager.GetObject("AnkameeLogo", resourceCulture);

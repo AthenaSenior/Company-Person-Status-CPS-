@@ -4,10 +4,6 @@ using FireSharp.Response;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Company_Person_Status__CPS_
@@ -44,6 +40,7 @@ namespace Company_Person_Status__CPS_
             Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
             foreach (var user in allUsers)
             {
+                if(!user.Value.isDeleted)
                 listBox1.Items.Add(user.Value.FullName);
             }
         }
@@ -56,6 +53,7 @@ namespace Company_Person_Status__CPS_
 
         private void button2_Click(object sender, EventArgs e)
         {
+            userFullName = listBox1.SelectedItem.ToString();
             TrackDurationForm tdf = new TrackDurationForm();
             tdf.Show();
         }
@@ -72,6 +70,69 @@ namespace Company_Person_Status__CPS_
             AddUserForm auf = new AddUserForm();
             auf.Owner = this;
             auf.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FirebaseResponse clientResponse = client.Get("");
+            Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
+            DialogResult dialogResult = MessageBox.Show("Are you sure to remove " + listBox1.SelectedItem.ToString() + " from the CPS system?", "Remove User", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (var user in allUsers)
+                {
+                    if(user.Value.FullName.Equals(listBox1.SelectedItem.ToString()))
+                    {
+                        var userForEdit = new User
+                        {
+                            Id = user.Value.Id,
+                            AuthorizationLevelId = user.Value.AuthorizationLevelId,
+                            AwayFor = user.Value.AwayFor,
+                            FullName = user.Value.FullName,
+                            Password = user.Value.Password,
+                            StatusId = user.Value.StatusId,
+                            ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
+                            ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
+                            TodaysAwayDuration = user.Value.TodaysAwayDuration,
+                            Username = user.Value.Username,
+                            isDeleted = true
+                        };
+                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                    }
+                }
+                listBox1.Items.Remove(listBox1.SelectedItem.ToString());
+                MessageBox.Show("User deleted.");
+            }
+        }
+
+        private void DurationResetButton_Click(object sender, EventArgs e)
+        {
+            FirebaseResponse clientResponse = client.Get("");
+            Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
+            DialogResult dialogResult = MessageBox.Show("Are you sure to reset ALL users' ALL durations? \n\nThis includes daily, weekly and monthly away durations and this operation is irreversible!", "One-Click Duration Reset", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (var user in allUsers)
+                {
+                    var userForEdit = new User
+                    {
+                        Id = user.Value.Id,
+                        AuthorizationLevelId = user.Value.AuthorizationLevelId,
+                        AwayFor = user.Value.AwayFor,
+                        FullName = user.Value.FullName,
+                        Password = user.Value.Password,
+                        StatusId = user.Value.StatusId,
+                        ThisMonthAwayDuration = 0,
+                        ThisWeekAwayDuration = 0,
+                        TodaysAwayDuration = 0,
+                        Username = user.Value.Username,
+                        isDeleted = false
+                    };
+                    client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                }
+                MessageBox.Show("All users' daily, weekly and monthly away durations had been reset.");
+            }
         }
     }
 }

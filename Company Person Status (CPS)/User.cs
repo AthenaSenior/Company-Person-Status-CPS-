@@ -1,7 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Company_Person_Status__CPS_
 {
@@ -36,5 +33,8 @@ namespace Company_Person_Status__CPS_
 
         [JsonProperty(PropertyName = "Username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
+
+        [JsonProperty(PropertyName = "isDeleted", NullValueHandling = NullValueHandling.Ignore)]
+        public bool isDeleted { get; set; }
     }
 }

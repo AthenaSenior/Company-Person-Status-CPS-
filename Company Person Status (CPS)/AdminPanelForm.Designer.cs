@@ -81,6 +81,7 @@ namespace Company_Person_Status__CPS_
             this.DurationResetButton.TabIndex = 2;
             this.DurationResetButton.Text = "      One-Click Duration Reset";
             this.DurationResetButton.UseVisualStyleBackColor = true;
+            this.DurationResetButton.Click += new System.EventHandler(this.DurationResetButton_Click);
             // 
             // ımageList1
             // 
@@ -161,6 +162,7 @@ namespace Company_Person_Status__CPS_
             this.button3.TabIndex = 7;
             this.button3.Text = "Remove User";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 

@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using Newtonsoft.Json;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FireSharp.Config;
 using FireSharp.Interfaces;
@@ -52,7 +46,7 @@ namespace Company_Person_Status__CPS_
 
             foreach (var user in allUsers)
             {
-                    if (textBox1.Text.Equals(user.Value.Username) && textBox2.Text.Equals(user.Value.Password))
+                    if (textBox1.Text.Equals(user.Value.Username) && textBox2.Text.Equals(user.Value.Password) && !user.Value.isDeleted)
                     {
                         label3.Visible = false;
                         this.Close();
@@ -68,7 +62,8 @@ namespace Company_Person_Status__CPS_
                             ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
                             ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
                             TodaysAwayDuration = user.Value.TodaysAwayDuration,
-                            Username = user.Value.Username
+                            Username = user.Value.Username,
+                            isDeleted = false
                         };
 
                         client.UpdateTaskAsync("/User"+loggedInUser.Id, loggedInUser);
