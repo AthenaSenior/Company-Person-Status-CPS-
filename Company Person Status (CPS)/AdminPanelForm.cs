@@ -83,6 +83,11 @@ namespace Company_Person_Status__CPS_
                 {
                     if(user.Value.FullName.Equals(listBox1.SelectedItem.ToString()))
                     {
+                        if(user.Value.AuthorizationLevelId == (int) AuthorizationTypes.Employer)
+                        {
+                            MessageBox.Show("Employer cannot be deleted.");
+                            break;
+                        }
                         var userForEdit = new User
                         {
                             Id = user.Value.Id,
@@ -98,10 +103,11 @@ namespace Company_Person_Status__CPS_
                             isDeleted = true
                         };
                         client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        listBox1.Items.Remove(listBox1.SelectedItem.ToString());
+                        MessageBox.Show("User deleted.");
+                        break;
                     }
                 }
-                listBox1.Items.Remove(listBox1.SelectedItem.ToString());
-                MessageBox.Show("User deleted.");
             }
         }
 

@@ -40,13 +40,13 @@ namespace Company_Person_Status__CPS_
             this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.ManagerStatus = new System.Windows.Forms.Label();
+            this.CEOStatus = new System.Windows.Forms.Label();
+            this.Manager = new System.Windows.Forms.Label();
+            this.CEO = new System.Windows.Forms.Label();
+            this.EmployerStatus = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.Employer = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -163,13 +163,13 @@ namespace Company_Person_Status__CPS_
             // 
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.ManagerStatus);
+            this.panel2.Controls.Add(this.CEOStatus);
+            this.panel2.Controls.Add(this.Manager);
+            this.panel2.Controls.Add(this.CEO);
+            this.panel2.Controls.Add(this.EmployerStatus);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.Employer);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.pictureBox6);
             this.panel2.Controls.Add(this.pictureBox5);
@@ -191,7 +191,7 @@ namespace Company_Person_Status__CPS_
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("OpenSymbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(611, 248);
+            this.label16.Location = new System.Drawing.Point(591, 248);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(79, 16);
             this.label16.TabIndex = 22;
@@ -202,83 +202,83 @@ namespace Company_Person_Status__CPS_
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("OpenSymbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(307, 248);
+            this.label15.Location = new System.Drawing.Point(287, 248);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(79, 16);
             this.label15.TabIndex = 21;
             this.label15.Text = "for 00:00:00";
             this.label15.Visible = false;
             // 
-            // label14
+            // ManagerStatus
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(596, 229);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 19);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "-";
+            this.ManagerStatus.AutoSize = true;
+            this.ManagerStatus.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ManagerStatus.Location = new System.Drawing.Point(596, 229);
+            this.ManagerStatus.Name = "ManagerStatus";
+            this.ManagerStatus.Size = new System.Drawing.Size(17, 19);
+            this.ManagerStatus.TabIndex = 20;
+            this.ManagerStatus.Text = "-";
             // 
-            // label13
+            // CEOStatus
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(292, 229);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(17, 19);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "-";
+            this.CEOStatus.AutoSize = true;
+            this.CEOStatus.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CEOStatus.Location = new System.Drawing.Point(295, 229);
+            this.CEOStatus.Name = "CEOStatus";
+            this.CEOStatus.Size = new System.Drawing.Size(17, 19);
+            this.CEOStatus.TabIndex = 19;
+            this.CEOStatus.Text = "-";
             // 
-            // label12
+            // Manager
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(596, 113);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(17, 19);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "-";
+            this.Manager.AutoSize = true;
+            this.Manager.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Manager.Location = new System.Drawing.Point(576, 113);
+            this.Manager.Name = "Manager";
+            this.Manager.Size = new System.Drawing.Size(17, 19);
+            this.Manager.TabIndex = 18;
+            this.Manager.Text = "-";
             // 
-            // label11
+            // CEO
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(292, 112);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(17, 19);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "-";
+            this.CEO.AutoSize = true;
+            this.CEO.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CEO.Location = new System.Drawing.Point(272, 112);
+            this.CEO.Name = "CEO";
+            this.CEO.Size = new System.Drawing.Size(17, 19);
+            this.CEO.TabIndex = 17;
+            this.CEO.Text = "-";
             // 
-            // label10
+            // EmployerStatus
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(448, 174);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 19);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "-";
+            this.EmployerStatus.AutoSize = true;
+            this.EmployerStatus.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmployerStatus.Location = new System.Drawing.Point(455, 174);
+            this.EmployerStatus.Name = "EmployerStatus";
+            this.EmployerStatus.Size = new System.Drawing.Size(17, 19);
+            this.EmployerStatus.TabIndex = 16;
+            this.EmployerStatus.Text = "-";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("OpenSymbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(459, 193);
+            this.label9.Location = new System.Drawing.Point(449, 193);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 16);
             this.label9.TabIndex = 15;
             this.label9.Text = "for 00:00:00";
             this.label9.Visible = false;
             // 
-            // label8
+            // Employer
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(448, 41);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 19);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "-";
+            this.Employer.AutoSize = true;
+            this.Employer.Font = new System.Drawing.Font("OpenSymbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Employer.Location = new System.Drawing.Point(428, 41);
+            this.Employer.Name = "Employer";
+            this.Employer.Size = new System.Drawing.Size(17, 19);
+            this.Employer.TabIndex = 14;
+            this.Employer.Text = "-";
             // 
             // panel5
             // 
@@ -291,7 +291,7 @@ namespace Company_Person_Status__CPS_
             // 
             this.pictureBox6.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(596, 134);
+            this.pictureBox6.Location = new System.Drawing.Point(586, 134);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(94, 92);
             this.pictureBox6.TabIndex = 12;
@@ -301,7 +301,7 @@ namespace Company_Person_Status__CPS_
             // 
             this.pictureBox5.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(292, 134);
+            this.pictureBox5.Location = new System.Drawing.Point(282, 134);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(94, 92);
             this.pictureBox5.TabIndex = 11;
@@ -311,7 +311,7 @@ namespace Company_Person_Status__CPS_
             // 
             this.pictureBox4.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(448, 66);
+            this.pictureBox4.Location = new System.Drawing.Point(438, 66);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(101, 101);
             this.pictureBox4.TabIndex = 10;
@@ -332,15 +332,14 @@ namespace Company_Person_Status__CPS_
             this.label5.Font = new System.Drawing.Font("OpenSymbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 15);
+            this.label5.Size = new System.Drawing.Size(75, 15);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Your Status:";
+            this.label5.Text = "   Status:";
             // 
             // label3
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("OpenSymbol", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Location = new System.Drawing.Point(-6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 13);
             this.label3.TabIndex = 2;
@@ -368,9 +367,11 @@ namespace Company_Person_Status__CPS_
             // 
             // AdminPanelButton
             // 
-            this.AdminPanelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.AdminPanelButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.AdminPanelButton.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.AdminPanelButton.ForeColor = System.Drawing.SystemColors.Info;
+            this.AdminPanelButton.Image = global::Company_Person_Status__CPS_.Properties.Resources._5363451__1_;
+            this.AdminPanelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AdminPanelButton.Location = new System.Drawing.Point(896, 176);
             this.AdminPanelButton.Name = "AdminPanelButton";
             this.AdminPanelButton.Size = new System.Drawing.Size(100, 33);
@@ -382,6 +383,9 @@ namespace Company_Person_Status__CPS_
             // ControlButton
             // 
             this.ControlButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ControlButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ControlButton.Image = global::Company_Person_Status__CPS_.Properties.Resources._3063792;
+            this.ControlButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ControlButton.Location = new System.Drawing.Point(896, 134);
             this.ControlButton.Name = "ControlButton";
             this.ControlButton.Size = new System.Drawing.Size(100, 33);
@@ -474,13 +478,13 @@ namespace Company_Person_Status__CPS_
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label ManagerStatus;
+        private System.Windows.Forms.Label CEOStatus;
+        private System.Windows.Forms.Label Manager;
+        private System.Windows.Forms.Label CEO;
+        private System.Windows.Forms.Label EmployerStatus;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label Employer;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;

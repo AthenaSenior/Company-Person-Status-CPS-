@@ -34,28 +34,137 @@ namespace Company_Person_Status__CPS_
         {
             FirebaseResponse clientResponse = client.Get("");
             Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
-            foreach (var user in allUsers)
+
+            if (comboBox1.SelectedIndex == (int)AuthorizationTypes.Employer - 1)
             {
-                if(label1.Text.Equals(user.Value.FullName))
+                foreach (var user in allUsers)
                 {
-                    var userForEdit = new User
+                    if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer)
                     {
-                        Id = user.Value.Id,
-                        AuthorizationLevelId = comboBox1.SelectedIndex + 1,
-                        AwayFor = user.Value.AwayFor,
-                        FullName = textBox1.Text,
-                        Password = user.Value.Password,
-                        StatusId = user.Value.StatusId,
-                        ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
-                        ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
-                        TodaysAwayDuration = user.Value.TodaysAwayDuration,
-                        Username = textBox2.Text,
-                        isDeleted = false
-                    };
-                    client.UpdateTaskAsync("/User"+userForEdit.Id, userForEdit);
-                    MessageBox.Show("User updated.");
-                    this.Close();
-                    break;
+                        MessageBox.Show("Cannot add another employer. There is only one: " + user.Value.FullName);
+                        return;
+                    }
+                }
+                foreach (var user in allUsers)
+                {
+                    if (label1.Text.Equals(user.Value.FullName))
+                    {
+                        var userForEdit = new User
+                        {
+                            Id = user.Value.Id,
+                            AuthorizationLevelId = comboBox1.SelectedIndex + 1,
+                            AwayFor = user.Value.AwayFor,
+                            FullName = textBox1.Text,
+                            Password = user.Value.Password,
+                            StatusId = user.Value.StatusId,
+                            ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
+                            ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
+                            TodaysAwayDuration = user.Value.TodaysAwayDuration,
+                            Username = textBox2.Text,
+                            isDeleted = false
+                        };
+                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        MessageBox.Show("User updated.");
+                        this.Close();
+                        break;
+                    }
+                }
+            }
+            else if (comboBox1.SelectedIndex == (int)AuthorizationTypes.CEO - 1)
+            {
+                foreach (var user in allUsers)
+                {
+                    if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.CEO)
+                    {
+                        MessageBox.Show("Cannot add another CEO. There is only one: " + user.Value.FullName);
+                        return;
+                    }
+                }
+                foreach (var user in allUsers)
+                {
+                    if (label1.Text.Equals(user.Value.FullName))
+                    {
+                        var userForEdit = new User
+                        {
+                            Id = user.Value.Id,
+                            AuthorizationLevelId = comboBox1.SelectedIndex + 1,
+                            AwayFor = user.Value.AwayFor,
+                            FullName = textBox1.Text,
+                            Password = user.Value.Password,
+                            StatusId = user.Value.StatusId,
+                            ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
+                            ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
+                            TodaysAwayDuration = user.Value.TodaysAwayDuration,
+                            Username = textBox2.Text,
+                            isDeleted = false
+                        };
+                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        MessageBox.Show("User updated.");
+                        this.Close();
+                        break;
+                    }
+                }
+            }
+            else if (comboBox1.SelectedIndex == (int)AuthorizationTypes.Manager - 1)
+            {
+                foreach (var user in allUsers)
+                {
+                    if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Manager)
+                    {
+                        MessageBox.Show("Cannot add another manager. There is only one: " + user.Value.FullName);
+                        return;
+                    }
+                }
+                foreach (var user in allUsers)
+                {
+                    if (label1.Text.Equals(user.Value.FullName))
+                    {
+                        var userForEdit = new User
+                        {
+                            Id = user.Value.Id,
+                            AuthorizationLevelId = comboBox1.SelectedIndex + 1,
+                            AwayFor = user.Value.AwayFor,
+                            FullName = textBox1.Text,
+                            Password = user.Value.Password,
+                            StatusId = user.Value.StatusId,
+                            ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
+                            ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
+                            TodaysAwayDuration = user.Value.TodaysAwayDuration,
+                            Username = textBox2.Text,
+                            isDeleted = false
+                        };
+                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        MessageBox.Show("User updated.");
+                        this.Close();
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                foreach (var user in allUsers)
+                {
+                    if (label1.Text.Equals(user.Value.FullName))
+                    {
+                        var userForEdit = new User
+                        {
+                            Id = user.Value.Id,
+                            AuthorizationLevelId = comboBox1.SelectedIndex + 1,
+                            AwayFor = user.Value.AwayFor,
+                            FullName = textBox1.Text,
+                            Password = user.Value.Password,
+                            StatusId = user.Value.StatusId,
+                            ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
+                            ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
+                            TodaysAwayDuration = user.Value.TodaysAwayDuration,
+                            Username = textBox2.Text,
+                            isDeleted = false
+                        };
+                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        MessageBox.Show("User updated.");
+                        this.Close();
+                        break;
+                    }
                 }
             }
         }
