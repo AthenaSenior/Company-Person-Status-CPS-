@@ -38,16 +38,13 @@ namespace Company_Person_Status__CPS_
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.Employees = new System.Windows.Forms.Label();
             this.ManagerStatus = new System.Windows.Forms.Label();
             this.CEOStatus = new System.Windows.Forms.Label();
             this.Manager = new System.Windows.Forms.Label();
             this.CEO = new System.Windows.Forms.Label();
             this.EmployerStatus = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.Employer = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -61,6 +58,32 @@ namespace Company_Person_Status__CPS_
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.EmployeeNames2 = new System.Windows.Forms.Label();
+            this.EmployeeNames3 = new System.Windows.Forms.Label();
+            this.EmployeeNames = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,6 +94,28 @@ namespace Company_Person_Status__CPS_
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -161,16 +206,13 @@ namespace Company_Person_Status__CPS_
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.Employees);
             this.panel2.Controls.Add(this.ManagerStatus);
             this.panel2.Controls.Add(this.CEOStatus);
             this.panel2.Controls.Add(this.Manager);
             this.panel2.Controls.Add(this.CEO);
             this.panel2.Controls.Add(this.EmployerStatus);
-            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.Employer);
-            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.pictureBox6);
             this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(this.pictureBox4);
@@ -181,33 +223,21 @@ namespace Company_Person_Status__CPS_
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1001, 616);
             this.panel2.TabIndex = 10;
             this.panel2.Visible = false;
             // 
-            // label16
+            // Employees
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("OpenSymbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(591, 248);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 16);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "for 00:00:00";
-            this.label16.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("OpenSymbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(287, 248);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 16);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "for 00:00:00";
-            this.label15.Visible = false;
+            this.Employees.AutoSize = true;
+            this.Employees.Font = new System.Drawing.Font("OpenSymbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Employees.Location = new System.Drawing.Point(49, 353);
+            this.Employees.Name = "Employees";
+            this.Employees.Size = new System.Drawing.Size(0, 15);
+            this.Employees.TabIndex = 23;
             // 
             // ManagerStatus
             // 
@@ -259,17 +289,6 @@ namespace Company_Person_Status__CPS_
             this.EmployerStatus.TabIndex = 16;
             this.EmployerStatus.Text = "-";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("OpenSymbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(449, 193);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 16);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "for 00:00:00";
-            this.label9.Visible = false;
-            // 
             // Employer
             // 
             this.Employer.AutoSize = true;
@@ -279,13 +298,6 @@ namespace Company_Person_Status__CPS_
             this.Employer.Size = new System.Drawing.Size(17, 19);
             this.Employer.TabIndex = 14;
             this.Employer.Text = "-";
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(3, 275);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(992, 331);
-            this.panel5.TabIndex = 13;
             // 
             // pictureBox6
             // 
@@ -425,6 +437,287 @@ namespace Company_Person_Status__CPS_
             this.label2.TabIndex = 0;
             this.label2.Text = "-";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.pictureBox27);
+            this.panel5.Controls.Add(this.pictureBox26);
+            this.panel5.Controls.Add(this.pictureBox25);
+            this.panel5.Controls.Add(this.pictureBox24);
+            this.panel5.Controls.Add(this.pictureBox23);
+            this.panel5.Controls.Add(this.pictureBox22);
+            this.panel5.Controls.Add(this.pictureBox21);
+            this.panel5.Controls.Add(this.pictureBox20);
+            this.panel5.Controls.Add(this.pictureBox19);
+            this.panel5.Controls.Add(this.pictureBox18);
+            this.panel5.Controls.Add(this.pictureBox17);
+            this.panel5.Controls.Add(this.pictureBox16);
+            this.panel5.Controls.Add(this.pictureBox15);
+            this.panel5.Controls.Add(this.pictureBox14);
+            this.panel5.Controls.Add(this.pictureBox13);
+            this.panel5.Controls.Add(this.pictureBox12);
+            this.panel5.Controls.Add(this.pictureBox11);
+            this.panel5.Controls.Add(this.pictureBox10);
+            this.panel5.Controls.Add(this.pictureBox9);
+            this.panel5.Controls.Add(this.pictureBox8);
+            this.panel5.Controls.Add(this.pictureBox7);
+            this.panel5.Controls.Add(this.EmployeeNames2);
+            this.panel5.Controls.Add(this.EmployeeNames3);
+            this.panel5.Controls.Add(this.EmployeeNames);
+            this.panel5.Location = new System.Drawing.Point(3, 251);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(995, 362);
+            this.panel5.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(-116, -3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(3197, 15);
+            this.label7.TabIndex = 25;
+            this.label7.Text = resources.GetString("label7.Text");
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox27.Location = new System.Drawing.Point(880, 271);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox27.TabIndex = 45;
+            this.pictureBox27.TabStop = false;
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox26.Location = new System.Drawing.Point(745, 271);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox26.TabIndex = 44;
+            this.pictureBox26.TabStop = false;
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox25.Location = new System.Drawing.Point(610, 271);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox25.TabIndex = 43;
+            this.pictureBox25.TabStop = false;
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox24.Location = new System.Drawing.Point(475, 271);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox24.TabIndex = 42;
+            this.pictureBox24.TabStop = false;
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox23.Location = new System.Drawing.Point(335, 271);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox23.TabIndex = 41;
+            this.pictureBox23.TabStop = false;
+            // 
+            // pictureBox22
+            // 
+            this.pictureBox22.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox22.Location = new System.Drawing.Point(200, 271);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox22.TabIndex = 40;
+            this.pictureBox22.TabStop = false;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox21.Location = new System.Drawing.Point(65, 271);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox21.TabIndex = 39;
+            this.pictureBox21.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox20.Location = new System.Drawing.Point(880, 158);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox20.TabIndex = 38;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox19.Location = new System.Drawing.Point(745, 158);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox19.TabIndex = 37;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox18.Location = new System.Drawing.Point(610, 158);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox18.TabIndex = 36;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox17.Location = new System.Drawing.Point(475, 158);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox17.TabIndex = 35;
+            this.pictureBox17.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox16.Location = new System.Drawing.Point(335, 158);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox16.TabIndex = 34;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox15.Location = new System.Drawing.Point(200, 158);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox15.TabIndex = 33;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox14.Location = new System.Drawing.Point(65, 158);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox14.TabIndex = 32;
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox13.Location = new System.Drawing.Point(880, 48);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox13.TabIndex = 31;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox12.Location = new System.Drawing.Point(335, 48);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox12.TabIndex = 30;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox11.Location = new System.Drawing.Point(475, 48);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox11.TabIndex = 29;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Location = new System.Drawing.Point(610, 48);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox10.TabIndex = 28;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(745, 48);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox9.TabIndex = 27;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(200, 48);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox8.TabIndex = 26;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._16480;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Location = new System.Drawing.Point(65, 48);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(59, 58);
+            this.pictureBox7.TabIndex = 25;
+            this.pictureBox7.TabStop = false;
+            // 
+            // EmployeeNames2
+            // 
+            this.EmployeeNames2.AutoSize = true;
+            this.EmployeeNames2.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmployeeNames2.Location = new System.Drawing.Point(3, 134);
+            this.EmployeeNames2.Name = "EmployeeNames2";
+            this.EmployeeNames2.Size = new System.Drawing.Size(54, 21);
+            this.EmployeeNames2.TabIndex = 2;
+            this.EmployeeNames2.Text = "           ";
+            // 
+            // EmployeeNames3
+            // 
+            this.EmployeeNames3.AutoSize = true;
+            this.EmployeeNames3.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmployeeNames3.Location = new System.Drawing.Point(3, 250);
+            this.EmployeeNames3.Name = "EmployeeNames3";
+            this.EmployeeNames3.Size = new System.Drawing.Size(54, 21);
+            this.EmployeeNames3.TabIndex = 1;
+            this.EmployeeNames3.Text = "           ";
+            // 
+            // EmployeeNames
+            // 
+            this.EmployeeNames.AutoSize = true;
+            this.EmployeeNames.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmployeeNames.Location = new System.Drawing.Point(3, 25);
+            this.EmployeeNames.Name = "EmployeeNames";
+            this.EmployeeNames.Size = new System.Drawing.Size(54, 21);
+            this.EmployeeNames.TabIndex = 0;
+            this.EmployeeNames.Text = "           ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -453,6 +746,29 @@ namespace Company_Person_Status__CPS_
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -476,19 +792,42 @@ namespace Company_Person_Status__CPS_
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label ManagerStatus;
         private System.Windows.Forms.Label CEOStatus;
         private System.Windows.Forms.Label Manager;
         private System.Windows.Forms.Label CEO;
         private System.Windows.Forms.Label EmployerStatus;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label Employer;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label Employees;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label EmployeeNames;
+        private System.Windows.Forms.Label EmployeeNames2;
+        private System.Windows.Forms.Label EmployeeNames3;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox27;
+        private System.Windows.Forms.PictureBox pictureBox26;
+        private System.Windows.Forms.PictureBox pictureBox25;
+        private System.Windows.Forms.PictureBox pictureBox24;
+        private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox14;
     }
 }
 

@@ -66,10 +66,9 @@ namespace Company_Person_Status__CPS_
                             isDeleted = false
                         };
 
-                        client.UpdateTaskAsync("/User"+loggedInUser.Id, loggedInUser);
+                        client.UpdateAsync("/User"+loggedInUser.Id, loggedInUser);
                         (this.Owner as Form1).panel2.Visible = true;
                         (this.Owner as Form1).userLoggedIn(loggedInUser);
-                        (this.Owner as Form1).getMajorUsers();
                         break;
                     }
                     else

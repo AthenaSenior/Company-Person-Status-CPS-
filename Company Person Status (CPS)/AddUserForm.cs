@@ -71,7 +71,7 @@ namespace Company_Person_Status__CPS_
                     Username = textBox2.Text,
                     isDeleted = false
                 };
-                client.SetTaskAsync("/User" + newUser.Id, newUser);
+                client.SetAsync("/User" + newUser.Id, newUser);
                 (this.Owner as AdminPanelForm).listBox1.Items.Add(newUser.FullName);
                 MessageBox.Show("User added to the system.");
                 this.Close();
@@ -100,7 +100,7 @@ namespace Company_Person_Status__CPS_
                     Username = textBox2.Text,
                     isDeleted = false
                 };
-                client.SetTaskAsync("/User" + newUser.Id, newUser);
+                client.SetAsync("/User" + newUser.Id, newUser);
                 (this.Owner as AdminPanelForm).listBox1.Items.Add(newUser.FullName);
                 MessageBox.Show("User added to the system.");
                 this.Close();
@@ -120,7 +120,7 @@ namespace Company_Person_Status__CPS_
                 Username = textBox2.Text,
                 isDeleted = false
             };
-            client.SetTaskAsync("/User" + newUser.Id, newUser);
+            client.SetAsync("/User" + newUser.Id, newUser);
             (this.Owner as AdminPanelForm).listBox1.Items.Add(newUser.FullName);
             MessageBox.Show("User added to the system.");
             this.Close();

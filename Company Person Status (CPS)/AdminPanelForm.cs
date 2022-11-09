@@ -102,7 +102,7 @@ namespace Company_Person_Status__CPS_
                             Username = user.Value.Username,
                             isDeleted = true
                         };
-                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
                         listBox1.Items.Remove(listBox1.SelectedItem.ToString());
                         MessageBox.Show("User deleted.");
                         break;
@@ -135,7 +135,7 @@ namespace Company_Person_Status__CPS_
                         Username = user.Value.Username,
                         isDeleted = false
                     };
-                    client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                    client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
                 }
                 MessageBox.Show("All users' daily, weekly and monthly away durations had been reset.");
             }

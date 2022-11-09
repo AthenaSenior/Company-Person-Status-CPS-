@@ -63,7 +63,7 @@ namespace Company_Person_Status__CPS_
                             Username = textBox2.Text,
                             isDeleted = false
                         };
-                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
                         MessageBox.Show("User updated.");
                         this.Close();
                         break;
@@ -98,7 +98,7 @@ namespace Company_Person_Status__CPS_
                             Username = textBox2.Text,
                             isDeleted = false
                         };
-                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
                         MessageBox.Show("User updated.");
                         this.Close();
                         break;
@@ -133,7 +133,7 @@ namespace Company_Person_Status__CPS_
                             Username = textBox2.Text,
                             isDeleted = false
                         };
-                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
                         MessageBox.Show("User updated.");
                         this.Close();
                         break;
@@ -160,7 +160,7 @@ namespace Company_Person_Status__CPS_
                             Username = textBox2.Text,
                             isDeleted = false
                         };
-                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
                         MessageBox.Show("User updated.");
                         this.Close();
                         break;
@@ -216,7 +216,7 @@ namespace Company_Person_Status__CPS_
                             Username = user.Value.Username,
                             isDeleted = false
                         };
-                        client.UpdateTaskAsync("/User" + userForEdit.Id, userForEdit);
+                        client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
                         MessageBox.Show("User durations reset.");
                         break;
                     }

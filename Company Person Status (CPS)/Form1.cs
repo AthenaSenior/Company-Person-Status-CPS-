@@ -1,12 +1,14 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using FireSharp.EventStreaming;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace Company_Person_Status__CPS_
 {
@@ -50,9 +52,7 @@ namespace Company_Person_Status__CPS_
         {
             FirebaseResponse clientResponse = client.Get("");
             Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
-            DialogResult result = MessageBox.Show("Are you sure to close CPS?\n\nWith this action, your status become OFFLINE.", "You are closing CPS",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if(loggedInUser != null)
             {
                 foreach (var user in allUsers)
                 {
@@ -72,15 +72,14 @@ namespace Company_Person_Status__CPS_
                             Username = user.Value.Username,
                             isDeleted = false
                         };
-                        client.UpdateTaskAsync("/User" + exitingUser.Id, exitingUser);
+                        client.UpdateAsync("/User" + exitingUser.Id, exitingUser);
                         break;
                     }
                 }
-                MessageBox.Show("You exited from the system.", "Exit"); //This is important. Do not erase this otherwise system does not update the status in db
+                MessageBox.Show("You exited from the system and your status become offline.", "Quit");  //This is important. Do not erase this otherwise system does not update the status in db
             }
-            else if (result == DialogResult.No)
-                cancelEventArgs.Cancel = false;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -159,7 +158,7 @@ namespace Company_Person_Status__CPS_
                                     Username = user.Value.Username,
                                     isDeleted = false
                                 };
-                                client.UpdateTaskAsync("/User" + exitingUser.Id, exitingUser);
+                                client.UpdateAsync("/User" + exitingUser.Id, exitingUser);
                                 break;
                             }
                         }
@@ -191,7 +190,7 @@ namespace Company_Person_Status__CPS_
                                     Username = user.Value.Username,
                                     isDeleted = false
                                 };
-                                client.UpdateTaskAsync("/User" + userWithNewStatus.Id, userWithNewStatus);
+                                client.UpdateAsync("/User" + userWithNewStatus.Id, userWithNewStatus);
                                 break;
                             }
                         }
@@ -208,36 +207,56 @@ namespace Company_Person_Status__CPS_
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            getLiveData();
         }
 
-        public void getMajorUsers()
+        async void getLiveData()
         {
-            FirebaseResponse clientResponse = client.Get("");
-            Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
+            while(true)
+            {
+                FirebaseResponse clientResponse = await client.GetAsync("");
+                Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
+                updateScreen(allUsers);
+            }
+        }
 
+        private void updateScreen(Dictionary<string,User> allUsers)
+        {
             foreach (var user in allUsers)
             {
-                switch (user.Value.AuthorizationLevelId)
+                if (!user.Value.isDeleted)
                 {
-                    case (int)AuthorizationTypes.Employer:
-                        {
-                            Employer.Text = user.Value.FullName;
-                            printStatus(EmployerStatus, user.Value.StatusId);
-                            break;
-                        }
-                    case (int)AuthorizationTypes.CEO:
-                        {
-                            CEO.Text = user.Value.FullName;
-                            printStatus(CEOStatus, user.Value.StatusId);
-                            break;
-                        }
-                    case (int)AuthorizationTypes.Manager:
-                        {
-                            Manager.Text = user.Value.FullName;
-                            printStatus(ManagerStatus, user.Value.StatusId);
-                            break;
-                        }
+                    switch (user.Value.AuthorizationLevelId)
+                    {
+                        case (int)AuthorizationTypes.Employer:
+                            {
+                                Employer.Text = user.Value.FullName;
+                                printStatus(EmployerStatus, user.Value.StatusId);
+                                break;
+                            }
+                        case (int)AuthorizationTypes.CEO:
+                            {
+                                CEO.Text = user.Value.FullName;
+                                printStatus(CEOStatus, user.Value.StatusId);
+                                break;
+                            }
+                        case (int)AuthorizationTypes.Manager:
+                            {
+                                Manager.Text = user.Value.FullName;
+                                printStatus(ManagerStatus, user.Value.StatusId);
+                                break;
+                            }
+                        default:
+                            {
+                                if(!EmployeeNames.Text.Contains(user.Value.FullName) && EmployeeNames.Size.Width < 1000)
+                                EmployeeNames.Text += user.Value.FullName + "                ";
+                                else if (!EmployeeNames2.Text.Contains(user.Value.FullName) && !EmployeeNames.Text.Contains(user.Value.FullName) && EmployeeNames2.Size.Width < 1000)
+                                    EmployeeNames2.Text += user.Value.FullName + "                ";
+                                else if (!EmployeeNames3.Text.Contains(user.Value.FullName) && !EmployeeNames.Text.Contains(user.Value.FullName) && !EmployeeNames2.Text.Contains(user.Value.FullName) && EmployeeNames3.Size.Width < 1000)
+                                    EmployeeNames3.Text += user.Value.FullName + "                ";
+                                break;
+                            }
+                    }
                 }
             }
         }
@@ -259,20 +278,10 @@ namespace Company_Person_Status__CPS_
                     }
                 case (int) StatusTypes.Away:
                     {
-                        label.Text = "AWAY";
+                        label.Text = " AWAY";
                         label.ForeColor = Color.DarkOrange;
                         break;
                     }
-            }
-        }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Exit or no?",
-                               "My First Application",
-                                MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Information) == DialogResult.No)
-            {
-                e.Cancel = true;
             }
         }
     }
