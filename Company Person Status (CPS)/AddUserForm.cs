@@ -10,7 +10,19 @@ namespace Company_Person_Status__CPS_
 {
     public partial class AddUserForm : Form
     {
+        // Variables //
         private int userCount = 0;
+        
+        IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret = "krI2GcYbBhPh2KkQ3TfoLb4I6LEXYlvt6HMosQZP",
+            BasePath = "https://cps-ankamee-default-rtdb.firebaseio.com/"
+        };
+
+        IFirebaseClient client;
+        FirebaseResponse clientResponse;
+        Dictionary<string, User> allUsers;
+
         public AddUserForm()
         {
             try
@@ -22,20 +34,13 @@ namespace Company_Person_Status__CPS_
                 MessageBox.Show("No internet connection found. Please contact with your employer.");
             }
             InitializeComponent();
+            clientResponse = client.Get("");
+            allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
         }
 
-        IFirebaseConfig config = new FirebaseConfig
-        {
-            AuthSecret = "krI2GcYbBhPh2KkQ3TfoLb4I6LEXYlvt6HMosQZP",
-            BasePath = "https://cps-ankamee-default-rtdb.firebaseio.com/"
-        };
-
-        IFirebaseClient client;
-
+        // Methods //
         private void button1_Click(object sender, EventArgs e)
         {
-            FirebaseResponse clientResponse = client.Get("");
-            Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
             if(comboBox1.SelectedIndex == (int) AuthorizationTypes.Employer - 1)
             {
                 foreach (var user in allUsers)
@@ -47,8 +52,11 @@ namespace Company_Person_Status__CPS_
                     }
                 }
             }
+
+
             else if (comboBox1.SelectedIndex == (int)AuthorizationTypes.CEO - 1)
             {
+                bool notAnyDeletedUserDetected = true;
                 foreach (var user in allUsers)
                 {
                     if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.CEO)
@@ -56,28 +64,23 @@ namespace Company_Person_Status__CPS_
                         MessageBox.Show("Cannot add another CEO. There is only one: " + user.Value.FullName);
                         return;
                     }
+                    if(user.Value.isDeleted)
+                    {
+                        updateDeletedUserWithNewOne(user.Value.Id);
+                        notAnyDeletedUserDetected = false;
+                        break;
+                    }
                 }
-                var newUser = new User
+                if(notAnyDeletedUserDetected)
                 {
-                    Id = userCount + 1,
-                    AuthorizationLevelId = comboBox1.SelectedIndex + 1,
-                    AwayFor = 0,
-                    FullName = textBox3.Text,
-                    Password = textBox1.Text,
-                    StatusId = (int)StatusTypes.Offline,
-                    ThisMonthAwayDuration = 0,
-                    ThisWeekAwayDuration = 0,
-                    TodaysAwayDuration = 0,
-                    Username = textBox2.Text,
-                    isDeleted = false
-                };
-                client.SetAsync("/User" + newUser.Id, newUser);
-                (this.Owner as AdminPanelForm).listBox1.Items.Add(newUser.FullName);
-                MessageBox.Show("User added to the system.");
-                this.Close();
+                    createNewUserAndAddToDB();
+                }
             }
+
+
             else if (comboBox1.SelectedIndex == (int)AuthorizationTypes.Manager - 1)
             {
+                bool notAnyDeletedUserDetected = true;
                 foreach (var user in allUsers)
                 {
                     if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Manager)
@@ -85,30 +88,51 @@ namespace Company_Person_Status__CPS_
                         MessageBox.Show("Cannot add another manager. There is only one: " + user.Value.FullName);
                         return;
                     }
+                    if (user.Value.isDeleted)
+                    {
+                        updateDeletedUserWithNewOne(user.Value.Id);
+                        notAnyDeletedUserDetected = false;
+                        break;
+                    }
                 }
-                var newUser = new User
+                if (notAnyDeletedUserDetected)
                 {
-                    Id = userCount + 1,
-                    AuthorizationLevelId = comboBox1.SelectedIndex + 1,
-                    AwayFor = 0,
-                    FullName = textBox3.Text,
-                    Password = textBox1.Text,
-                    StatusId = (int)StatusTypes.Offline,
-                    ThisMonthAwayDuration = 0,
-                    ThisWeekAwayDuration = 0,
-                    TodaysAwayDuration = 0,
-                    Username = textBox2.Text,
-                    isDeleted = false
-                };
-                client.SetAsync("/User" + newUser.Id, newUser);
-                (this.Owner as AdminPanelForm).listBox1.Items.Add(newUser.FullName);
-                MessageBox.Show("User added to the system.");
-                this.Close();
+                    createNewUserAndAddToDB();
+                }
             }
-            else { 
-            var newUser = new User
+
+
+            else {
+                bool notAnyDeletedUserDetected  = true;
+                foreach (var user in allUsers)
+                {
+                    if (user.Value.isDeleted)
+                    {
+                        updateDeletedUserWithNewOne(user.Value.Id);
+                        notAnyDeletedUserDetected = false;
+                        break;
+                    }
+                }
+                if (notAnyDeletedUserDetected)
+                {
+                    createNewUserAndAddToDB();
+                }
+            }
+        }
+
+        private void AddUserForm_Load(object sender, EventArgs e)
+        {
+            foreach (var user in allUsers)
             {
-                Id = userCount + 1,
+                userCount++;
+            }
+        }
+
+        private void createNewUserAndAddToDB()
+        {
+            var user = new User
+            {
+                Id = userCount + 101,
                 AuthorizationLevelId = comboBox1.SelectedIndex + 1,
                 AwayFor = 0,
                 FullName = textBox3.Text,
@@ -120,21 +144,35 @@ namespace Company_Person_Status__CPS_
                 Username = textBox2.Text,
                 isDeleted = false
             };
-            client.SetAsync("/User" + newUser.Id, newUser);
-            (this.Owner as AdminPanelForm).listBox1.Items.Add(newUser.FullName);
+            client.SetAsync("/User" + user.Id, user);
+            (this.Owner as AdminPanelForm).listBox1.Items.Add(user.FullName);
             MessageBox.Show("User added to the system.");
             this.Close();
-            }
         }
 
-        private void AddUserForm_Load(object sender, EventArgs e)
+        private void updateDeletedUserWithNewOne(int userId)
         {
-            FirebaseResponse clientResponse = client.Get("");
-            Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
-            foreach (var user in allUsers)
+            var user = new User
             {
-                userCount++;
-            }
+                Id = userId,
+                AuthorizationLevelId = comboBox1.SelectedIndex + 1,
+                AwayFor = 0,
+                FullName = textBox3.Text,
+                Password = textBox1.Text,
+                StatusId = (int)StatusTypes.Offline,
+                ThisMonthAwayDuration = 0,
+                ThisWeekAwayDuration = 0,
+                TodaysAwayDuration = 0,
+                Username = textBox2.Text,
+                isDeleted = false
+            };
+            client.UpdateAsync("/User" + user.Id, user);
+            (this.Owner as AdminPanelForm).listBox1.Items.Add(user.FullName);
+            MessageBox.Show("User added to the system.");
+            this.Close();
         }
+
+
+
     }
 }

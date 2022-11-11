@@ -5,19 +5,10 @@ namespace Company_Person_Status__CPS_
 {
     public partial class Help : Form
     {
+        // No code here. Only Label Heaven
         public Help()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Help_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

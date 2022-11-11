@@ -48,15 +48,15 @@ namespace Company_Person_Status__CPS_
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.DailyHour = new System.Windows.Forms.Label();
+            this.DailyMinute = new System.Windows.Forms.Label();
+            this.DailySecond = new System.Windows.Forms.Label();
+            this.WeeklyHour = new System.Windows.Forms.Label();
+            this.WeeklyMinute = new System.Windows.Forms.Label();
+            this.WeeklySecond = new System.Windows.Forms.Label();
+            this.MonthlyHour = new System.Windows.Forms.Label();
+            this.MonthlyMinute = new System.Windows.Forms.Label();
+            this.MonthlySecond = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -241,110 +241,110 @@ namespace Company_Person_Status__CPS_
             this.label17.TabIndex = 18;
             this.label17.Text = "Hours";
             // 
-            // label18
+            // DailyHour
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(27, 143);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(14, 13);
-            this.label18.TabIndex = 19;
-            this.label18.Text = "-";
+            this.DailyHour.AutoSize = true;
+            this.DailyHour.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DailyHour.Location = new System.Drawing.Point(27, 143);
+            this.DailyHour.Name = "DailyHour";
+            this.DailyHour.Size = new System.Drawing.Size(14, 13);
+            this.DailyHour.TabIndex = 19;
+            this.DailyHour.Text = "-";
             // 
-            // label19
+            // DailyMinute
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(27, 172);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(14, 13);
-            this.label19.TabIndex = 20;
-            this.label19.Text = "-";
+            this.DailyMinute.AutoSize = true;
+            this.DailyMinute.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DailyMinute.Location = new System.Drawing.Point(27, 172);
+            this.DailyMinute.Name = "DailyMinute";
+            this.DailyMinute.Size = new System.Drawing.Size(14, 13);
+            this.DailyMinute.TabIndex = 20;
+            this.DailyMinute.Text = "-";
             // 
-            // label20
+            // DailySecond
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(27, 204);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(14, 13);
-            this.label20.TabIndex = 21;
-            this.label20.Text = "-";
+            this.DailySecond.AutoSize = true;
+            this.DailySecond.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DailySecond.Location = new System.Drawing.Point(27, 204);
+            this.DailySecond.Name = "DailySecond";
+            this.DailySecond.Size = new System.Drawing.Size(14, 13);
+            this.DailySecond.TabIndex = 21;
+            this.DailySecond.Text = "-";
             // 
-            // label21
+            // WeeklyHour
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(176, 143);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(14, 13);
-            this.label21.TabIndex = 22;
-            this.label21.Text = "-";
+            this.WeeklyHour.AutoSize = true;
+            this.WeeklyHour.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WeeklyHour.Location = new System.Drawing.Point(176, 143);
+            this.WeeklyHour.Name = "WeeklyHour";
+            this.WeeklyHour.Size = new System.Drawing.Size(14, 13);
+            this.WeeklyHour.TabIndex = 22;
+            this.WeeklyHour.Text = "-";
             // 
-            // label22
+            // WeeklyMinute
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(176, 171);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(14, 13);
-            this.label22.TabIndex = 23;
-            this.label22.Text = "-";
+            this.WeeklyMinute.AutoSize = true;
+            this.WeeklyMinute.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WeeklyMinute.Location = new System.Drawing.Point(176, 171);
+            this.WeeklyMinute.Name = "WeeklyMinute";
+            this.WeeklyMinute.Size = new System.Drawing.Size(14, 13);
+            this.WeeklyMinute.TabIndex = 23;
+            this.WeeklyMinute.Text = "-";
             // 
-            // label23
+            // WeeklySecond
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(176, 203);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(14, 13);
-            this.label23.TabIndex = 24;
-            this.label23.Text = "-";
+            this.WeeklySecond.AutoSize = true;
+            this.WeeklySecond.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WeeklySecond.Location = new System.Drawing.Point(176, 203);
+            this.WeeklySecond.Name = "WeeklySecond";
+            this.WeeklySecond.Size = new System.Drawing.Size(14, 13);
+            this.WeeklySecond.TabIndex = 24;
+            this.WeeklySecond.Text = "-";
             // 
-            // label24
+            // MonthlyHour
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(336, 142);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(14, 13);
-            this.label24.TabIndex = 25;
-            this.label24.Text = "-";
+            this.MonthlyHour.AutoSize = true;
+            this.MonthlyHour.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MonthlyHour.Location = new System.Drawing.Point(336, 142);
+            this.MonthlyHour.Name = "MonthlyHour";
+            this.MonthlyHour.Size = new System.Drawing.Size(14, 13);
+            this.MonthlyHour.TabIndex = 25;
+            this.MonthlyHour.Text = "-";
             // 
-            // label25
+            // MonthlyMinute
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(336, 171);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(14, 13);
-            this.label25.TabIndex = 26;
-            this.label25.Text = "-";
+            this.MonthlyMinute.AutoSize = true;
+            this.MonthlyMinute.BackColor = System.Drawing.Color.Transparent;
+            this.MonthlyMinute.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MonthlyMinute.Location = new System.Drawing.Point(336, 171);
+            this.MonthlyMinute.Name = "MonthlyMinute";
+            this.MonthlyMinute.Size = new System.Drawing.Size(14, 13);
+            this.MonthlyMinute.TabIndex = 26;
+            this.MonthlyMinute.Text = "-";
             // 
-            // label26
+            // MonthlySecond
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(336, 202);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(14, 13);
-            this.label26.TabIndex = 27;
-            this.label26.Text = "-";
+            this.MonthlySecond.AutoSize = true;
+            this.MonthlySecond.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MonthlySecond.Location = new System.Drawing.Point(336, 202);
+            this.MonthlySecond.Name = "MonthlySecond";
+            this.MonthlySecond.Size = new System.Drawing.Size(14, 13);
+            this.MonthlySecond.TabIndex = 27;
+            this.MonthlySecond.Text = "-";
             // 
             // TrackDurationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 267);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.MonthlySecond);
+            this.Controls.Add(this.MonthlyHour);
+            this.Controls.Add(this.WeeklySecond);
+            this.Controls.Add(this.WeeklyMinute);
+            this.Controls.Add(this.WeeklyHour);
+            this.Controls.Add(this.DailySecond);
+            this.Controls.Add(this.DailyMinute);
+            this.Controls.Add(this.DailyHour);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -363,7 +363,7 @@ namespace Company_Person_Status__CPS_
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label25);
+            this.Controls.Add(this.MonthlyMinute);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -397,14 +397,14 @@ namespace Company_Person_Status__CPS_
         public System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label label16;
         public System.Windows.Forms.Label label17;
-        public System.Windows.Forms.Label label18;
-        public System.Windows.Forms.Label label19;
-        public System.Windows.Forms.Label label20;
-        public System.Windows.Forms.Label label21;
-        public System.Windows.Forms.Label label22;
-        public System.Windows.Forms.Label label23;
-        public System.Windows.Forms.Label label24;
-        public System.Windows.Forms.Label label25;
-        public System.Windows.Forms.Label label26;
+        public System.Windows.Forms.Label DailyHour;
+        public System.Windows.Forms.Label DailyMinute;
+        public System.Windows.Forms.Label DailySecond;
+        public System.Windows.Forms.Label WeeklyHour;
+        public System.Windows.Forms.Label WeeklyMinute;
+        public System.Windows.Forms.Label WeeklySecond;
+        public System.Windows.Forms.Label MonthlyHour;
+        public System.Windows.Forms.Label MonthlyMinute;
+        public System.Windows.Forms.Label MonthlySecond;
     }
 }

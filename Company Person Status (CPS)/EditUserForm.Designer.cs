@@ -159,7 +159,6 @@ namespace Company_Person_Status__CPS_
             this.label6.Size = new System.Drawing.Size(140, 15);
             this.label6.TabIndex = 11;
             this.label6.Text = "* Password cannot be changed.";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button2
             // 

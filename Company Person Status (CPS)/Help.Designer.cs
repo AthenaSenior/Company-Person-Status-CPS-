@@ -380,7 +380,6 @@
             this.label2.Size = new System.Drawing.Size(297, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "1) What is CPS and how can I start using it?";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Help
             // 
@@ -395,7 +394,6 @@
             this.MinimizeBox = false;
             this.Name = "Help";
             this.Text = "Help";
-            this.Load += new System.EventHandler(this.Help_Load);
             this.helpControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

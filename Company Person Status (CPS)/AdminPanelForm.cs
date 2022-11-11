@@ -10,7 +10,7 @@ namespace Company_Person_Status__CPS_
 {
     public partial class AdminPanelForm : Form
     {
-
+        private readonly int MAX_PEOPLE = 24;
         public static string userFullName = "";
 
         IFirebaseConfig config = new FirebaseConfig
@@ -43,6 +43,11 @@ namespace Company_Person_Status__CPS_
                 if(!user.Value.isDeleted)
                 listBox1.Items.Add(user.Value.FullName);
             }
+
+            if(listBox1.Items.Count == MAX_PEOPLE) // If members are full, cannot add more (24 for this CPS)
+            {
+                button1.Enabled = false;
+            }
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -62,6 +67,7 @@ namespace Company_Person_Status__CPS_
         {
             userFullName = listBox1.SelectedItem.ToString();
             EditUserForm euf = new EditUserForm();
+            euf.Owner = this;
             euf.Show();
         }
 

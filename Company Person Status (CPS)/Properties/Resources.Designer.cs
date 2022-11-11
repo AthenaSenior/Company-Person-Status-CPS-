@@ -93,6 +93,16 @@ namespace Company_Person_Status__CPS_.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap _41_411894_how_to_set_use_grey_silhouette_of_man {
+            get {
+                object obj = ResourceManager.GetObject("41-411894_how-to-set-use-grey-silhouette-of-man", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap _5363451 {
             get {
                 object obj = ResourceManager.GetObject("5363451", resourceCulture);
@@ -173,6 +183,16 @@ namespace Company_Person_Status__CPS_.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap dark_carbon_fiber_texture_pattern_background_1017_37140 {
+            get {
+                object obj = ResourceManager.GetObject("dark-carbon-fiber-texture-pattern-background_1017-37140", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap ExitButton {
             get {
                 object obj = ResourceManager.GetObject("ExitButton", resourceCulture);
@@ -193,9 +213,29 @@ namespace Company_Person_Status__CPS_.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap Hopstarter_Soft_Scraps_Button_Info_5 {
+            get {
+                object obj = ResourceManager.GetObject("Hopstarter-Soft-Scraps-Button-Info-5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap istockphoto_1287056904_612x612 {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-1287056904-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_image {
+            get {
+                object obj = ResourceManager.GetObject("no-image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +306,66 @@ namespace Company_Person_Status__CPS_.Properties {
         internal static System.Drawing.Bitmap People {
             get {
                 object obj = ResourceManager.GetObject("People", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sample_User_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Sample_User_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sample_User_Icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Sample_User_Icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sample_User_Icon2 {
+            get {
+                object obj = ResourceManager.GetObject("Sample_User_Icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sample_User_Icon3 {
+            get {
+                object obj = ResourceManager.GetObject("Sample_User_Icon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sample_User_Icon4 {
+            get {
+                object obj = ResourceManager.GetObject("Sample_User_Icon4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sample_User_Icon5 {
+            get {
+                object obj = ResourceManager.GetObject("Sample_User_Icon5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

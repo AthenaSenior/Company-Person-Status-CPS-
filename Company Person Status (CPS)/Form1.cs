@@ -9,12 +9,19 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Company_Person_Status__CPS_
 {
     public partial class Form1 : Form
     {
+
+        // Variables
         public User loggedInUser;
+        private int index, userIndex;
+        IEnumerable<Label> states, employeeNames;
+        IEnumerable<PictureBox> userIcons;
+
 
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -23,6 +30,9 @@ namespace Company_Person_Status__CPS_
         };
 
         IFirebaseClient client;
+        FirebaseResponse clientResponse;
+        Dictionary<string, User> allUsers;
+
         public Form1()
         {
             try
@@ -46,33 +56,26 @@ namespace Company_Person_Status__CPS_
             button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
             this.Closing += OnClosing;
+            states = panel5.Controls.OfType<Label>()
+                .Where(label => label.Name.StartsWith("status"));
+            employeeNames = panel5.Controls.OfType<Label>()
+                .Where(label => label.Name.StartsWith("name"));
+            userIcons = panel5.Controls.OfType<PictureBox>()
+                .Where(label => label.Name.StartsWith("pictureBox"));
+            clientResponse = client.Get("");
+            allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
         }
 
+        // Methods
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
         {
-            FirebaseResponse clientResponse = client.Get("");
-            Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
             if(loggedInUser != null)
             {
                 foreach (var user in allUsers)
                 {
                     if (user.Value.FullName.Equals(loggedInUser.FullName))
                     {
-                        var exitingUser = new User
-                        {
-                            Id = user.Value.Id,
-                            AuthorizationLevelId = user.Value.AuthorizationLevelId,
-                            AwayFor = user.Value.AwayFor,
-                            FullName = user.Value.FullName,
-                            Password = user.Value.Password,
-                            StatusId = (int)StatusTypes.Offline,
-                            ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
-                            ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
-                            TodaysAwayDuration = user.Value.TodaysAwayDuration,
-                            Username = user.Value.Username,
-                            isDeleted = false
-                        };
-                        client.UpdateAsync("/User" + exitingUser.Id, exitingUser);
+                        changeStatus(user, (int)StatusTypes.Offline);
                         break;
                     }
                 }
@@ -103,7 +106,7 @@ namespace Company_Person_Status__CPS_
             if (loggedInUser != null)
             {
                 label6.Text = loggedInUser.FullName;
-                label3.ForeColor = Color.Green;
+                label3.ForeColor = Color.LightGreen;
                 label3.Text = "ONLINE";
                 ControlButton.BackColor = Color.DarkOrange;
                 ControlButton.ForeColor = Color.Black;
@@ -128,8 +131,6 @@ namespace Company_Person_Status__CPS_
 
         private void ControlButton_Click(object sender, EventArgs e)
         {
-            FirebaseResponse clientResponse = client.Get("");
-            Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
             switch (label3.Text)
             {
                 case "ONLINE":
@@ -144,21 +145,7 @@ namespace Company_Person_Status__CPS_
                         {
                             if (user.Value.FullName.Equals(loggedInUser.FullName))
                             {
-                                var exitingUser = new User
-                                {
-                                    Id = user.Value.Id,
-                                    AuthorizationLevelId = user.Value.AuthorizationLevelId,
-                                    AwayFor = user.Value.AwayFor,
-                                    FullName = user.Value.FullName,
-                                    Password = user.Value.Password,
-                                    StatusId = (int)StatusTypes.Away,
-                                    ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
-                                    ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
-                                    TodaysAwayDuration = user.Value.TodaysAwayDuration,
-                                    Username = user.Value.Username,
-                                    isDeleted = false
-                                };
-                                client.UpdateAsync("/User" + exitingUser.Id, exitingUser);
+                                changeStatus(user, (int)StatusTypes.Away);
                                 break;
                             }
                         }
@@ -167,7 +154,7 @@ namespace Company_Person_Status__CPS_
                 case "AWAY":
                     {
                         label3.Text = "ONLINE";
-                        label3.ForeColor = Color.Green;
+                        label3.ForeColor = Color.LightGreen;
                         ControlButton.BackColor = Color.DarkOrange;
                         ControlButton.Text = "            Go Away";
                         ControlButton.ForeColor = Color.Black;
@@ -176,21 +163,7 @@ namespace Company_Person_Status__CPS_
                         {
                             if (user.Value.FullName.Equals(loggedInUser.FullName))
                             {
-                                var userWithNewStatus = new User
-                                {
-                                    Id = user.Value.Id,
-                                    AuthorizationLevelId = user.Value.AuthorizationLevelId,
-                                    AwayFor = user.Value.AwayFor,
-                                    FullName = user.Value.FullName,
-                                    Password = user.Value.Password,
-                                    StatusId = (int)StatusTypes.Online,
-                                    ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
-                                    ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
-                                    TodaysAwayDuration = user.Value.TodaysAwayDuration,
-                                    Username = user.Value.Username,
-                                    isDeleted = false
-                                };
-                                client.UpdateAsync("/User" + userWithNewStatus.Id, userWithNewStatus);
+                                changeStatus(user, (int)StatusTypes.Online);
                                 break;
                             }
                         }
@@ -212,7 +185,7 @@ namespace Company_Person_Status__CPS_
 
         async void getLiveData()
         {
-            while(true)
+            while (true)
             {
                 FirebaseResponse clientResponse = await client.GetAsync("");
                 Dictionary<string, User> allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
@@ -220,8 +193,11 @@ namespace Company_Person_Status__CPS_
             }
         }
 
-        private void updateScreen(Dictionary<string,User> allUsers)
+        private void updateScreen(Dictionary<string, User> allUsers)
         {
+            index = userIcons.Count() - 1; // Local variables
+            userIndex = 20;
+
             foreach (var user in allUsers)
             {
                 if (!user.Value.isDeleted)
@@ -247,13 +223,21 @@ namespace Company_Person_Status__CPS_
                                 break;
                             }
                         default:
-                            {
-                                if(!EmployeeNames.Text.Contains(user.Value.FullName) && EmployeeNames.Size.Width < 1000)
-                                EmployeeNames.Text += user.Value.FullName + "                ";
-                                else if (!EmployeeNames2.Text.Contains(user.Value.FullName) && !EmployeeNames.Text.Contains(user.Value.FullName) && EmployeeNames2.Size.Width < 1000)
-                                    EmployeeNames2.Text += user.Value.FullName + "                ";
-                                else if (!EmployeeNames3.Text.Contains(user.Value.FullName) && !EmployeeNames.Text.Contains(user.Value.FullName) && !EmployeeNames2.Text.Contains(user.Value.FullName) && EmployeeNames3.Size.Width < 1000)
-                                    EmployeeNames3.Text += user.Value.FullName + "                ";
+                            {   if(index > (userIndex - allUsers.Count()))
+                                {
+                                    userIcons.ElementAt(index).Visible = true;
+                                    employeeNames.ElementAt(index).Text = user.Value.FullName;
+                                    printStatus(states.ElementAt(index), user.Value.StatusId);
+                                    index--;
+                                    userIndex++;
+                                }
+                                else if(index <= 15 && index >=0 )
+                                {
+                                    userIcons.ElementAt(index).Visible = true;
+                                    employeeNames.ElementAt(index).Text = user.Value.FullName;
+                                    printStatus(states.ElementAt(index), user.Value.StatusId);
+                                    index--;
+                                }
                                 break;
                             }
                     }
@@ -273,7 +257,7 @@ namespace Company_Person_Status__CPS_
                 case (int) StatusTypes.Online:
                     {
                         label.Text = "ONLINE";
-                        label.ForeColor = Color.Green;
+                        label.ForeColor = Color.LightGreen;
                         break;
                     }
                 case (int) StatusTypes.Away:
@@ -283,6 +267,25 @@ namespace Company_Person_Status__CPS_
                         break;
                     }
             }
+        }
+
+        private void changeStatus(KeyValuePair<string, User> user, int newStatusId)
+        {
+            var userWithNewStatus = new User
+            {
+                Id = user.Value.Id,
+                AuthorizationLevelId = user.Value.AuthorizationLevelId,
+                AwayFor = user.Value.AwayFor,
+                FullName = user.Value.FullName,
+                Password = user.Value.Password,
+                StatusId = newStatusId,
+                ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
+                ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
+                TodaysAwayDuration = user.Value.TodaysAwayDuration,
+                Username = user.Value.Username,
+                isDeleted = false
+            };
+            client.UpdateAsync("/User" + userWithNewStatus.Id, userWithNewStatus);
         }
     }
 }
