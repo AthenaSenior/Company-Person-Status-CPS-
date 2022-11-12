@@ -121,8 +121,8 @@
   <data name="button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="no-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\no-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sample_User_Icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sample_User_Icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="output-onlinepngtools (4) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinepngtools (4) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,9 +145,6 @@
   <data name="world-map-with-countries-on-blue-background-vector-1336799" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\world-map-with-countries-on-blue-background-vector-1336799.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sample_User_Icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sample_User_Icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Sample_User_Icon5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sample_User_Icon5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,9 +153,6 @@
   </data>
   <data name="Sample_User_Icon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sample_User_Icon4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sample_User_Icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sample_User_Icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="5363451" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5363451.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +175,17 @@
   <data name="ExitButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExitButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3063792" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3063792.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Sample_User_Icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sample_User_Icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="no-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hopstarter-Soft-Scraps-Button-Info-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hopstarter-Soft-Scraps-Button-Info-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="16480" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\16480.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,19 +202,19 @@
   <data name="dark-carbon-fiber-texture-pattern-background_1017-37140" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dark-carbon-fiber-texture-pattern-background_1017-37140.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sample_User_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sample_User_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sample_User_Icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sample_User_Icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AnkameeLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AnkameeLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3063792" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3063792.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sample_User_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sample_User_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="People" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\People.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Hopstarter-Soft-Scraps-Button-Info-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hopstarter-Soft-Scraps-Button-Info-5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HD-wallpaper-carbon-world-map-grunge-art-carbon-background-creative-black-world-map-travel-concepts-world-map-concepts-world-map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HD-wallpaper-carbon-world-map-grunge-art-carbon-background-creative-black-world-map-travel-concepts-world-map-concepts-world-map.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

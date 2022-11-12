@@ -203,6 +203,17 @@ namespace Company_Person_Status__CPS_.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap HD_wallpaper_carbon_world_map_grunge_art_carbon_background_creative_black_world_map_travel_concepts_world_map_concepts_world_map {
+            get {
+                object obj = ResourceManager.GetObject("HD-wallpaper-carbon-world-map-grunge-art-carbon-background-creative-black-world-m" +
+                        "ap-travel-concepts-world-map-concepts-world-map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap HelpButton {
             get {
                 object obj = ResourceManager.GetObject("HelpButton", resourceCulture);
