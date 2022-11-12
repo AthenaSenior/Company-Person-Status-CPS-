@@ -103,7 +103,7 @@ namespace Company_Person_Status__CPS_
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources._899103;
+            this.pictureBox1.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.Sample_User_Icon5;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(318, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -154,90 +154,90 @@ namespace Company_Person_Status__CPS_
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(45, 143);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 14);
+            this.label9.Size = new System.Drawing.Size(40, 12);
             this.label9.TabIndex = 10;
             this.label9.Text = "Hours";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label10.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(45, 172);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 14);
+            this.label10.Size = new System.Drawing.Size(54, 12);
             this.label10.TabIndex = 11;
             this.label10.Text = "Minutes";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label11.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(45, 204);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 14);
+            this.label11.Size = new System.Drawing.Size(54, 12);
             this.label11.TabIndex = 12;
             this.label11.Text = "Seconds";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label12.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(194, 142);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 14);
+            this.label12.Size = new System.Drawing.Size(40, 12);
             this.label12.TabIndex = 13;
             this.label12.Text = "Hours";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label13.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(194, 171);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 14);
+            this.label13.Size = new System.Drawing.Size(54, 12);
             this.label13.TabIndex = 14;
             this.label13.Text = "Minutes";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label14.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(353, 170);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 14);
+            this.label14.Size = new System.Drawing.Size(54, 12);
             this.label14.TabIndex = 15;
             this.label14.Text = "Minutes";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label15.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.Location = new System.Drawing.Point(194, 203);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 14);
+            this.label15.Size = new System.Drawing.Size(54, 12);
             this.label15.TabIndex = 16;
             this.label15.Text = "Seconds";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label16.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(353, 202);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(56, 14);
+            this.label16.Size = new System.Drawing.Size(54, 12);
             this.label16.TabIndex = 17;
             this.label16.Text = "Seconds";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label17.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(353, 141);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 14);
+            this.label17.Size = new System.Drawing.Size(40, 12);
             this.label17.TabIndex = 18;
             this.label17.Text = "Hours";
             // 
