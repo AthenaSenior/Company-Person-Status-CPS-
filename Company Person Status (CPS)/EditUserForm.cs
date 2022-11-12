@@ -20,6 +20,7 @@ namespace Company_Person_Status__CPS_
         IFirebaseClient client;
         Dictionary<string, User> allUsers;
         FirebaseResponse clientResponse;
+        private bool changeCEO, changeManager, changeEmployer;
 
         public EditUserForm()
         {
@@ -43,7 +44,7 @@ namespace Company_Person_Status__CPS_
             {
                 foreach (var user in allUsers)
                 {
-                    if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer)
+                    if ((user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer) && !changeEmployer)
                     {
                         MessageBox.Show("Cannot add another employer. There is only one: " + user.Value.FullName);
                         return;
@@ -61,7 +62,7 @@ namespace Company_Person_Status__CPS_
             {
                 foreach (var user in allUsers)
                 {
-                    if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.CEO)
+                    if ((user.Value.AuthorizationLevelId == (int)AuthorizationTypes.CEO) && !changeCEO)
                     {
                         MessageBox.Show("Cannot add another CEO. There is only one: " + user.Value.FullName);
                         return;
@@ -79,7 +80,7 @@ namespace Company_Person_Status__CPS_
             {
                 foreach (var user in allUsers)
                 {
-                    if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Manager)
+                    if ((user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Manager) && !changeManager)
                     {
                         MessageBox.Show("Cannot add another manager. There is only one: " + user.Value.FullName);
                         return;
@@ -162,6 +163,38 @@ namespace Company_Person_Status__CPS_
             textBox2.Text = user.Value.Username;
             textBox3.Text = user.Value.Password;
             comboBox1.SelectedIndex = user.Value.AuthorizationLevelId - 1;
+            switch(user.Value.AuthorizationLevelId)
+            {
+                case (int)AuthorizationTypes.Manager:
+                    {
+                        changeManager = true;
+                        changeCEO = false;
+                        changeEmployer = false;
+                        break;
+                    }
+                case (int)AuthorizationTypes.CEO:
+                    {
+                        changeManager = false;
+                        changeCEO = true;
+                        changeEmployer = false;
+                        break;
+                    }
+                case (int)AuthorizationTypes.Employer:
+                    {
+                        changeManager = false;
+                        changeCEO = false;
+                        changeEmployer = true;
+                        break;
+                    }
+                default:
+                    {
+                        changeManager = false;
+                        changeCEO = false;
+                        changeEmployer = false;
+                        break;
+                    }
+            }
+
         }
 
         private void resetUserDuration(KeyValuePair<string,User> user)

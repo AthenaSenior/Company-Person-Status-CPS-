@@ -1437,7 +1437,6 @@ namespace Company_Person_Status__CPS_
         private System.Windows.Forms.Label name113;
         private System.Windows.Forms.Label status114;
         private System.Windows.Forms.Label name114;
-        private System.Windows.Forms.Label us;
         private System.Windows.Forms.Label status115;
         private System.Windows.Forms.Label name115;
         private System.Windows.Forms.Label status119;
