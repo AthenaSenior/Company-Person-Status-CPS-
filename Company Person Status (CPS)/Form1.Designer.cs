@@ -1303,7 +1303,7 @@ namespace Company_Person_Status__CPS_
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.HD_wallpaper_carbon_world_map_grunge_art_carbon_background_creative_black_world_map_travel_concepts_world_map_concepts_world_map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(998, 615);
             this.Controls.Add(this.panel1);
