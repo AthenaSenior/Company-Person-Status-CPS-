@@ -38,7 +38,7 @@ namespace Company_Person_Status__CPS_
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.infoButton = new System.Windows.Forms.PictureBox();
             this.Employees = new System.Windows.Forms.Label();
             this.ManagerStatus = new System.Windows.Forms.Label();
             this.CEOStatus = new System.Windows.Forms.Label();
@@ -130,7 +130,7 @@ namespace Company_Person_Status__CPS_
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -249,7 +249,7 @@ namespace Company_Person_Status__CPS_
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.pictureBox28);
+            this.panel2.Controls.Add(this.infoButton);
             this.panel2.Controls.Add(this.Employees);
             this.panel2.Controls.Add(this.ManagerStatus);
             this.panel2.Controls.Add(this.CEOStatus);
@@ -274,15 +274,16 @@ namespace Company_Person_Status__CPS_
             this.panel2.TabIndex = 10;
             this.panel2.Visible = false;
             // 
-            // pictureBox28
+            // infoButton
             // 
-            this.pictureBox28.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.Hopstarter_Soft_Scraps_Button_Info_5;
-            this.pictureBox28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox28.Location = new System.Drawing.Point(900, 35);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(29, 28);
-            this.pictureBox28.TabIndex = 25;
-            this.pictureBox28.TabStop = false;
+            this.infoButton.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.Hopstarter_Soft_Scraps_Button_Info_5;
+            this.infoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.infoButton.Location = new System.Drawing.Point(900, 35);
+            this.infoButton.Name = "infoButton";
+            this.infoButton.Size = new System.Drawing.Size(29, 28);
+            this.infoButton.TabIndex = 25;
+            this.infoButton.TabStop = false;
+            this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
             // 
             // Employees
             // 
@@ -1319,7 +1320,7 @@ namespace Company_Person_Status__CPS_
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1451,7 +1452,7 @@ namespace Company_Person_Status__CPS_
         private System.Windows.Forms.Label name118;
         private System.Windows.Forms.Label name117;
         private System.Windows.Forms.Label name116;
-        private System.Windows.Forms.PictureBox pictureBox28;
+        private System.Windows.Forms.PictureBox infoButton;
     }
 }
 

@@ -228,11 +228,11 @@ namespace Company_Person_Status__CPS_
         private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.ImageList ımageList2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.ListBox listBox1;
+        public System.Windows.Forms.Button button1;
     }
 }

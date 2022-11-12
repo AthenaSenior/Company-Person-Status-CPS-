@@ -18,6 +18,7 @@ namespace Company_Person_Status__CPS_
 
         // Variables
         public User loggedInUser;
+        public static string userFullName = "";
         private int index, userIndex;
         IEnumerable<Label> states, employeeNames;
         IEnumerable<PictureBox> userIcons;
@@ -244,6 +245,14 @@ namespace Company_Person_Status__CPS_
                 }
             }
         }
+
+        private void infoButton_Click(object sender, EventArgs e)
+        {
+           userFullName = loggedInUser.FullName;
+           TrackOwnDurationForm todf = new TrackOwnDurationForm();
+           todf.Show();
+        }
+
         private void printStatus(Label label, int statusId)
         {
             switch (statusId)

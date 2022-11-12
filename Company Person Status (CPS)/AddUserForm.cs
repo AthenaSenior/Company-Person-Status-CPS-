@@ -147,6 +147,10 @@ namespace Company_Person_Status__CPS_
             client.SetAsync("/User" + user.Id, user);
             (this.Owner as AdminPanelForm).listBox1.Items.Add(user.FullName);
             MessageBox.Show("User added to the system.");
+            if ((this.Owner as AdminPanelForm).listBox1.Items.Count == 24)
+            {
+                (this.Owner as AdminPanelForm).button1.Enabled = false;
+            }
             this.Close();
         }
 
@@ -169,6 +173,10 @@ namespace Company_Person_Status__CPS_
             client.UpdateAsync("/User" + user.Id, user);
             (this.Owner as AdminPanelForm).listBox1.Items.Add(user.FullName);
             MessageBox.Show("User added to the system.");
+            if ((this.Owner as AdminPanelForm).listBox1.Items.Count == 24)
+            {
+                (this.Owner as AdminPanelForm).button1.Enabled = false;
+            }
             this.Close();
         }
 
