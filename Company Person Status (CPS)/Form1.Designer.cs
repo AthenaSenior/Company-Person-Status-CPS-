@@ -188,6 +188,7 @@ namespace Company_Person_Status__CPS_
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(915, 584);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 22);
@@ -270,7 +271,7 @@ namespace Company_Person_Status__CPS_
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1001, 616);
+            this.panel2.Size = new System.Drawing.Size(1001, 619);
             this.panel2.TabIndex = 10;
             this.panel2.Visible = false;
             // 
@@ -569,7 +570,7 @@ namespace Company_Person_Status__CPS_
             this.panel5.Controls.Add(this.name101);
             this.panel5.Location = new System.Drawing.Point(3, 251);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(995, 362);
+            this.panel5.Size = new System.Drawing.Size(998, 368);
             this.panel5.TabIndex = 24;
             // 
             // status119
