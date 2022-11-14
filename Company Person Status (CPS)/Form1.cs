@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Threading.Tasks;
 using System.Linq;
 
 namespace Company_Person_Status__CPS_
@@ -110,7 +109,7 @@ namespace Company_Person_Status__CPS_
             {
                 label6.Text = loggedInUser.FullName;
                 label3.ForeColor = Color.LightGreen;
-                label3.Text = "ONLINE";
+                label3.Text = "Online";
                 ControlButton.BackColor = Color.DarkOrange;
                 ControlButton.ForeColor = Color.Black;
                 ControlButton.Text = "            Go Away";
@@ -136,9 +135,9 @@ namespace Company_Person_Status__CPS_
         {
             switch (label3.Text)
             {
-                case "ONLINE":
+                case "Online":
                     {
-                        label3.Text = "AWAY";
+                        label3.Text = "Away";
                         label3.ForeColor = Color.DarkOrange;
                         ControlButton.BackColor = Color.Green;
                         ControlButton.Text = "          Go Online";
@@ -154,9 +153,9 @@ namespace Company_Person_Status__CPS_
                         }
                         break;
                     }
-                case "AWAY":
+                case "Away":
                     {
-                        label3.Text = "ONLINE";
+                        label3.Text = "Online";
                         label3.ForeColor = Color.LightGreen;
                         ControlButton.BackColor = Color.DarkOrange;
                         ControlButton.Text = "            Go Away";
