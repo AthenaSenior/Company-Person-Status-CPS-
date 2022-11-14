@@ -278,9 +278,9 @@ namespace Company_Person_Status__CPS_
             // 
             this.infoButton.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.Hopstarter_Soft_Scraps_Button_Info_5;
             this.infoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.infoButton.Location = new System.Drawing.Point(900, 35);
+            this.infoButton.Location = new System.Drawing.Point(905, 40);
             this.infoButton.Name = "infoButton";
-            this.infoButton.Size = new System.Drawing.Size(29, 28);
+            this.infoButton.Size = new System.Drawing.Size(23, 23);
             this.infoButton.TabIndex = 25;
             this.infoButton.TabStop = false;
             this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
@@ -472,11 +472,11 @@ namespace Company_Person_Status__CPS_
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(910, 120);
+            this.label4.Location = new System.Drawing.Point(905, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 20);
             this.label4.TabIndex = 3;
-            this.label4.Text = "for 00:02:51";
+            this.label4.Text = "for 00:00:00";
             this.label4.Visible = false;
             // 
             // pictureBox3
