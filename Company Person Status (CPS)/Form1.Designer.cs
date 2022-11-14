@@ -299,7 +299,7 @@ namespace Company_Person_Status__CPS_
             // 
             this.ManagerStatus.AutoSize = true;
             this.ManagerStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ManagerStatus.Location = new System.Drawing.Point(630, 229);
+            this.ManagerStatus.Location = new System.Drawing.Point(628, 229);
             this.ManagerStatus.Name = "ManagerStatus";
             this.ManagerStatus.Size = new System.Drawing.Size(17, 24);
             this.ManagerStatus.TabIndex = 20;
@@ -309,7 +309,7 @@ namespace Company_Person_Status__CPS_
             // 
             this.CEOStatus.AutoSize = true;
             this.CEOStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CEOStatus.Location = new System.Drawing.Point(280, 229);
+            this.CEOStatus.Location = new System.Drawing.Point(282, 229);
             this.CEOStatus.Name = "CEOStatus";
             this.CEOStatus.Size = new System.Drawing.Size(17, 24);
             this.CEOStatus.TabIndex = 19;
@@ -341,7 +341,7 @@ namespace Company_Person_Status__CPS_
             // 
             this.EmployerStatus.AutoSize = true;
             this.EmployerStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EmployerStatus.Location = new System.Drawing.Point(465, 174);
+            this.EmployerStatus.Location = new System.Drawing.Point(458, 174);
             this.EmployerStatus.Name = "EmployerStatus";
             this.EmployerStatus.Size = new System.Drawing.Size(17, 24);
             this.EmployerStatus.TabIndex = 16;
