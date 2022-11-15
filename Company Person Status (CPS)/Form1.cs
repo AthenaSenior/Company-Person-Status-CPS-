@@ -22,7 +22,7 @@ namespace Company_Person_Status__CPS_
         private int index, userIndex;
         IEnumerable<Label> states, employeeNames;
         IEnumerable<PictureBox> userIcons;
-        int awayTime = 0;
+        int awayTime = 0, hour, minute, seconds;
 
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -65,6 +65,7 @@ namespace Company_Person_Status__CPS_
                 .Where(label => label.Name.StartsWith("pictureBox"));
             clientResponse = client.Get("");
             allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
+            timer1.Interval = 1000;
         }
 
         // Methods
@@ -139,6 +140,7 @@ namespace Company_Person_Status__CPS_
                 case "Online":
                     {
                         startTimer();
+                        label4.Text = "for 00:00:00";
                         label3.Text = "Away";
                         label3.ForeColor = Color.DarkOrange;
                         ControlButton.BackColor = Color.Green;
@@ -303,21 +305,24 @@ namespace Company_Person_Status__CPS_
 
         private void startTimer()
         {
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 1000;
             timer1.Start();
-            // timer1.Tick = 0;
+            timer1.Tick += new EventHandler(timer1_Tick);
         }
 
         private void stopTimer()
         {
             timer1.Stop();
+            timer1.Tick -= new EventHandler(timer1_Tick);
+            awayTime = 0;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            hour = awayTime / 3600;
+            minute = (awayTime % 3600) / 60;
+            seconds = (awayTime % 3600) % 60;
+            label4.Text = "for " + hour.ToString("00")+ ":" + minute.ToString("00") + ":" + seconds.ToString("00");
             awayTime++;
-            label4.Text = awayTime.ToString();
         }
     }
 }
