@@ -137,6 +137,7 @@ namespace Company_Person_Status__CPS_
             {
                 case "Online":
                     {
+                        startTimer();
                         label3.Text = "Away";
                         label3.ForeColor = Color.DarkOrange;
                         ControlButton.BackColor = Color.Green;
@@ -296,6 +297,10 @@ namespace Company_Person_Status__CPS_
                 isDeleted = false
             };
             client.UpdateAsync("/User" + userWithNewStatus.Id, userWithNewStatus);
+        }
+        private void startTimer()
+        {
+
         }
     }
 }
