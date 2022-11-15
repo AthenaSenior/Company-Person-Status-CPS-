@@ -29,6 +29,7 @@ namespace Company_Person_Status__CPS_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -126,6 +127,7 @@ namespace Company_Person_Status__CPS_
             this.EmployeeNames2 = new System.Windows.Forms.Label();
             this.EmployeeNames3 = new System.Windows.Forms.Label();
             this.name101 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -1453,6 +1455,7 @@ namespace Company_Person_Status__CPS_
         private System.Windows.Forms.Label name117;
         private System.Windows.Forms.Label name116;
         private System.Windows.Forms.PictureBox infoButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

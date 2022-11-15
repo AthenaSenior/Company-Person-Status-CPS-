@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Linq;
+using System.Timers;
 
 namespace Company_Person_Status__CPS_
 {
@@ -21,7 +22,7 @@ namespace Company_Person_Status__CPS_
         private int index, userIndex;
         IEnumerable<Label> states, employeeNames;
         IEnumerable<PictureBox> userIcons;
-
+        int awayTime = 0;
 
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -156,6 +157,7 @@ namespace Company_Person_Status__CPS_
                     }
                 case "Away":
                     {
+                        stopTimer();
                         label3.Text = "Online";
                         label3.ForeColor = Color.LightGreen;
                         ControlButton.BackColor = Color.DarkOrange;
@@ -298,9 +300,24 @@ namespace Company_Person_Status__CPS_
             };
             client.UpdateAsync("/User" + userWithNewStatus.Id, userWithNewStatus);
         }
+
         private void startTimer()
         {
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000;
+            timer1.Start();
+            // timer1.Tick = 0;
+        }
 
+        private void stopTimer()
+        {
+            timer1.Stop();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            awayTime++;
+            label4.Text = awayTime.ToString();
         }
     }
 }
