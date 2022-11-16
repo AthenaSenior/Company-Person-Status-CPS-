@@ -15,7 +15,6 @@ namespace Company_Person_Status__CPS_
 {
     public partial class Form1 : Form
     {
-
         // Variables
         public User loggedInUser;
         public static string userFullName = "";
@@ -66,12 +65,37 @@ namespace Company_Person_Status__CPS_
             clientResponse = client.Get("");
             allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
             timer1.Interval = 1000;
+            GlobalMouseHandler.MouseMovedEvent += GlobalMouseHandler_MouseMovedEvent;
+            Application.AddMessageFilter(new GlobalMouseHandler());
         }
 
         // Methods
+        private void GlobalMouseHandler_MouseMovedEvent(object sender, MouseEventArgs e) // If mouse makes an activity.
+        {
+            if(label3.Text == "Away") { 
+                clientResponse = client.Get("");
+                allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
+                foreach (var user in allUsers)
+                {
+                    if (user.Value.FullName.Equals(loggedInUser.FullName))
+                    {
+                        changeStatus(user, (int)StatusTypes.Online, awayTime); // Polymorphism - Function Overloading
+                        break;
+                    }
+                }
+                stopTimer(); // Makes awayTime zero again.
+                label3.Text = "Online";
+                label3.ForeColor = Color.LightGreen;
+                ControlButton.BackColor = Color.DarkOrange;
+                ControlButton.Text = "            Go Away";
+                ControlButton.ForeColor = Color.Black;
+                label4.Visible = false;
+        }
+    }
+
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
         {
-            if(loggedInUser != null)
+            if (loggedInUser != null)
             {
                 foreach (var user in allUsers)
                 {
@@ -118,7 +142,7 @@ namespace Company_Person_Status__CPS_
 
                 switch (loggedInUser.AuthorizationLevelId)
                 {
-                    case (int) AuthorizationTypes.Employer:
+                    case (int)AuthorizationTypes.Employer:
                         {
                             AdminPanelButton.Text = "  Admin Panel";
                             AdminPanelButton.Visible = true;
@@ -135,6 +159,8 @@ namespace Company_Person_Status__CPS_
 
         private void ControlButton_Click(object sender, EventArgs e)
         {
+            clientResponse = client.Get("");
+            allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
             switch (label3.Text)
             {
                 case "Online":
@@ -159,21 +185,21 @@ namespace Company_Person_Status__CPS_
                     }
                 case "Away":
                     {
-                        stopTimer();
+                        foreach (var user in allUsers)
+                        {
+                            if (user.Value.FullName.Equals(loggedInUser.FullName))
+                            {
+                                changeStatus(user, (int)StatusTypes.Online, awayTime); // Polymorphism - Function Overloading
+                                break;
+                            }
+                        }
+                        stopTimer(); // Makes awayTime zero again.
                         label3.Text = "Online";
                         label3.ForeColor = Color.LightGreen;
                         ControlButton.BackColor = Color.DarkOrange;
                         ControlButton.Text = "            Go Away";
                         ControlButton.ForeColor = Color.Black;
                         label4.Visible = false;
-                        foreach (var user in allUsers)
-                        {
-                            if (user.Value.FullName.Equals(loggedInUser.FullName))
-                            {
-                                changeStatus(user, (int)StatusTypes.Online);
-                                break;
-                            }
-                        }
                         break;
                     }
             }
@@ -230,7 +256,7 @@ namespace Company_Person_Status__CPS_
                                 break;
                             }
                         default:
-                            {   if(index > (userIndex - allUsers.Count()))
+                            { if (index > (userIndex - allUsers.Count()))
                                 {
                                     userIcons.ElementAt(index).Visible = true;
                                     employeeNames.ElementAt(index).Text = user.Value.FullName;
@@ -238,7 +264,7 @@ namespace Company_Person_Status__CPS_
                                     index--;
                                     userIndex++;
                                 }
-                                else if(index <= 15 && index >=0 )
+                                else if (index <= 15 && index >= 0)
                                 {
                                     userIcons.ElementAt(index).Visible = true;
                                     employeeNames.ElementAt(index).Text = user.Value.FullName;
@@ -254,28 +280,28 @@ namespace Company_Person_Status__CPS_
 
         private void infoButton_Click(object sender, EventArgs e)
         {
-           userFullName = loggedInUser.FullName;
-           TrackOwnDurationForm todf = new TrackOwnDurationForm();
-           todf.Show();
+            userFullName = loggedInUser.FullName;
+            TrackOwnDurationForm todf = new TrackOwnDurationForm();
+            todf.Show();
         }
 
         private void printStatus(Label label, int statusId)
         {
             switch (statusId)
             {
-                case (int) StatusTypes.Offline:
+                case (int)StatusTypes.Offline:
                     {
                         label.Text = "OFFLINE";
                         label.ForeColor = Color.Red;
                         break;
                     }
-                case (int) StatusTypes.Online:
+                case (int)StatusTypes.Online:
                     {
                         label.Text = "ONLINE";
                         label.ForeColor = Color.LightGreen;
                         break;
                     }
-                case (int) StatusTypes.Away:
+                case (int)StatusTypes.Away:
                     {
                         label.Text = " AWAY";
                         label.ForeColor = Color.DarkOrange;
@@ -284,6 +310,7 @@ namespace Company_Person_Status__CPS_
             }
         }
 
+        // Overloading Function
         private void changeStatus(KeyValuePair<string, User> user, int newStatusId)
         {
             var userWithNewStatus = new User
@@ -297,6 +324,25 @@ namespace Company_Person_Status__CPS_
                 ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
                 ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
                 TodaysAwayDuration = user.Value.TodaysAwayDuration,
+                Username = user.Value.Username,
+                isDeleted = false
+            };
+            client.UpdateAsync("/User" + userWithNewStatus.Id, userWithNewStatus);
+        }
+
+        private void changeStatus(KeyValuePair<string, User> user, int newStatusId, int awayTime)
+        {
+            var userWithNewStatus = new User
+            {
+                Id = user.Value.Id,
+                AuthorizationLevelId = user.Value.AuthorizationLevelId,
+                AwayFor = user.Value.AwayFor,
+                FullName = user.Value.FullName,
+                Password = user.Value.Password,
+                StatusId = newStatusId,
+                ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration + awayTime,
+                ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration + awayTime,
+                TodaysAwayDuration = user.Value.TodaysAwayDuration + awayTime,
                 Username = user.Value.Username,
                 isDeleted = false
             };
@@ -321,8 +367,34 @@ namespace Company_Person_Status__CPS_
             hour = awayTime / 3600;
             minute = (awayTime % 3600) / 60;
             seconds = (awayTime % 3600) % 60;
-            label4.Text = "for " + hour.ToString("00")+ ":" + minute.ToString("00") + ":" + seconds.ToString("00");
+            label4.Text = "for " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + seconds.ToString("00");
             awayTime++;
         }
     }
+    public class GlobalMouseHandler : IMessageFilter
+    {
+        private const int WM_MOUSEMOVE = 0x0200;
+        private System.Drawing.Point previousMousePosition = new System.Drawing.Point();
+        public static event EventHandler<MouseEventArgs> MouseMovedEvent = delegate { };
+
+        #region IMessageFilter Members
+
+        public bool PreFilterMessage(ref System.Windows.Forms.Message m)
+        {
+            if (m.Msg == WM_MOUSEMOVE)
+            {
+                System.Drawing.Point currentMousePoint = Control.MousePosition;
+                if (previousMousePosition.X != currentMousePoint.X && previousMousePosition.Y != currentMousePoint.Y)
+                {
+                    previousMousePosition = currentMousePoint;
+                    MouseMovedEvent(this, new MouseEventArgs(MouseButtons.None, 0, currentMousePoint.X, currentMousePoint.Y, 0));
+                }
+            }
+            // Always allow message to continue to the next filter control
+            return false;
+        }
+
+        #endregion
+    }
 }
+

@@ -12,6 +12,7 @@ namespace Company_Person_Status__CPS_
     {
         // Variables //
         private int userCount = 0;
+        private readonly int MAX_PEOPLE = 24;
         
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -152,7 +153,7 @@ namespace Company_Person_Status__CPS_
             client.SetAsync("/User" + user.Id, user);
             (this.Owner as AdminPanelForm).listBox1.Items.Add(user.FullName);
             MessageBox.Show("User added to the system.");
-            if ((this.Owner as AdminPanelForm).listBox1.Items.Count == 24)
+            if ((this.Owner as AdminPanelForm).listBox1.Items.Count == MAX_PEOPLE)
             {
                 (this.Owner as AdminPanelForm).button1.Enabled = false;
             }
@@ -178,7 +179,7 @@ namespace Company_Person_Status__CPS_
             client.UpdateAsync("/User" + user.Id, user);
             (this.Owner as AdminPanelForm).listBox1.Items.Add(user.FullName);
             MessageBox.Show("User added to the system.");
-            if ((this.Owner as AdminPanelForm).listBox1.Items.Count == 24)
+            if ((this.Owner as AdminPanelForm).listBox1.Items.Count == MAX_PEOPLE)
             {
                 (this.Owner as AdminPanelForm).button1.Enabled = false;
             }
