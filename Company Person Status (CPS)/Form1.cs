@@ -390,7 +390,6 @@ namespace Company_Person_Status__CPS_
                     MouseMovedEvent(this, new MouseEventArgs(MouseButtons.None, 0, currentMousePoint.X, currentMousePoint.Y, 0));
                 }
             }
-            // Always allow message to continue to the next filter control
             return false;
         }
 
