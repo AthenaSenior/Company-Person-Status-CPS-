@@ -1038,106 +1038,87 @@ namespace Company_Person_Status__CPS_
             // 
             // pictureBox27
             // 
-            this.pictureBox27.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox27.Location = new System.Drawing.Point(880, 271);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(59, 58);
             this.pictureBox27.TabIndex = 45;
             this.pictureBox27.TabStop = false;
-            this.pictureBox27.Visible = false;
             // 
             // pictureBox26
             // 
-            this.pictureBox26.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox26.Location = new System.Drawing.Point(745, 271);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(59, 58);
             this.pictureBox26.TabIndex = 44;
             this.pictureBox26.TabStop = false;
-            this.pictureBox26.Visible = false;
             // 
             // pictureBox25
             // 
-            this.pictureBox25.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox25.Location = new System.Drawing.Point(610, 271);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(59, 58);
             this.pictureBox25.TabIndex = 43;
             this.pictureBox25.TabStop = false;
-            this.pictureBox25.Visible = false;
             // 
             // pictureBox24
             // 
-            this.pictureBox24.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox24.Location = new System.Drawing.Point(475, 271);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(59, 58);
             this.pictureBox24.TabIndex = 42;
             this.pictureBox24.TabStop = false;
-            this.pictureBox24.Visible = false;
             // 
             // pictureBox23
             // 
-            this.pictureBox23.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox23.Location = new System.Drawing.Point(335, 271);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(59, 58);
             this.pictureBox23.TabIndex = 41;
             this.pictureBox23.TabStop = false;
-            this.pictureBox23.Visible = false;
             // 
             // pictureBox22
             // 
-            this.pictureBox22.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox22.Location = new System.Drawing.Point(200, 271);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(59, 58);
             this.pictureBox22.TabIndex = 40;
             this.pictureBox22.TabStop = false;
-            this.pictureBox22.Visible = false;
             // 
             // pictureBox21
             // 
-            this.pictureBox21.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox21.Location = new System.Drawing.Point(65, 271);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(59, 58);
             this.pictureBox21.TabIndex = 39;
             this.pictureBox21.TabStop = false;
-            this.pictureBox21.Visible = false;
             // 
             // pictureBox20
             // 
-            this.pictureBox20.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox20.Location = new System.Drawing.Point(880, 158);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(59, 58);
             this.pictureBox20.TabIndex = 38;
             this.pictureBox20.TabStop = false;
-            this.pictureBox20.Visible = false;
             // 
             // pictureBox19
             // 
-            this.pictureBox19.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox19.Location = new System.Drawing.Point(745, 158);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(59, 58);
             this.pictureBox19.TabIndex = 37;
             this.pictureBox19.TabStop = false;
-            this.pictureBox19.Visible = false;
             // 
             // pictureBox18
             // 
-            this.pictureBox18.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox18.ErrorImage = global::Company_Person_Status__CPS_.Properties.Resources.Sample_User_Icon1;
             this.pictureBox18.Location = new System.Drawing.Point(610, 158);
@@ -1145,11 +1126,9 @@ namespace Company_Person_Status__CPS_
             this.pictureBox18.Size = new System.Drawing.Size(59, 58);
             this.pictureBox18.TabIndex = 36;
             this.pictureBox18.TabStop = false;
-            this.pictureBox18.Visible = false;
             // 
             // pictureBox17
             // 
-            this.pictureBox17.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox17.ErrorImage = global::Company_Person_Status__CPS_.Properties.Resources.Sample_User_Icon1;
             this.pictureBox17.Location = new System.Drawing.Point(475, 158);
@@ -1157,55 +1136,45 @@ namespace Company_Person_Status__CPS_
             this.pictureBox17.Size = new System.Drawing.Size(59, 58);
             this.pictureBox17.TabIndex = 35;
             this.pictureBox17.TabStop = false;
-            this.pictureBox17.Visible = false;
             // 
             // pictureBox16
             // 
-            this.pictureBox16.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox16.Location = new System.Drawing.Point(335, 158);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(59, 58);
             this.pictureBox16.TabIndex = 34;
             this.pictureBox16.TabStop = false;
-            this.pictureBox16.Visible = false;
             // 
             // pictureBox15
             // 
-            this.pictureBox15.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox15.Location = new System.Drawing.Point(200, 158);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(59, 58);
             this.pictureBox15.TabIndex = 33;
             this.pictureBox15.TabStop = false;
-            this.pictureBox15.Visible = false;
             // 
             // pictureBox14
             // 
-            this.pictureBox14.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox14.Location = new System.Drawing.Point(65, 158);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(59, 58);
             this.pictureBox14.TabIndex = 32;
             this.pictureBox14.TabStop = false;
-            this.pictureBox14.Visible = false;
             // 
             // pictureBox13
             // 
-            this.pictureBox13.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox13.Location = new System.Drawing.Point(880, 48);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(59, 58);
             this.pictureBox13.TabIndex = 31;
             this.pictureBox13.TabStop = false;
-            this.pictureBox13.Visible = false;
             // 
             // pictureBox9
             // 
-            this.pictureBox9.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox9.Location = new System.Drawing.Point(745, 48);
             this.pictureBox9.Name = "pictureBox9";
@@ -1216,58 +1185,48 @@ namespace Company_Person_Status__CPS_
             // 
             // pictureBox10
             // 
-            this.pictureBox10.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox10.Location = new System.Drawing.Point(610, 48);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(59, 58);
             this.pictureBox10.TabIndex = 29;
             this.pictureBox10.TabStop = false;
-            this.pictureBox10.Visible = false;
             // 
             // pictureBox11
             // 
-            this.pictureBox11.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox11.Location = new System.Drawing.Point(475, 48);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(59, 58);
             this.pictureBox11.TabIndex = 28;
             this.pictureBox11.TabStop = false;
-            this.pictureBox11.Visible = false;
             // 
             // pictureBox12
             // 
-            this.pictureBox12.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox12.Location = new System.Drawing.Point(335, 48);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(59, 58);
             this.pictureBox12.TabIndex = 27;
             this.pictureBox12.TabStop = false;
-            this.pictureBox12.Visible = false;
             // 
             // pictureBox8
             // 
-            this.pictureBox8.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox8.Location = new System.Drawing.Point(200, 48);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(59, 58);
             this.pictureBox8.TabIndex = 26;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Visible = false;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.no_image;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.Location = new System.Drawing.Point(65, 48);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(59, 58);
             this.pictureBox7.TabIndex = 25;
             this.pictureBox7.TabStop = false;
-            this.pictureBox7.Visible = false;
             // 
             // EmployeeNames2
             // 

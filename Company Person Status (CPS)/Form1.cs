@@ -18,10 +18,9 @@ namespace Company_Person_Status__CPS_
         // Variables
         public User loggedInUser;
         public static string userFullName = "";
-        private int index, userIndex;
+        private int index, userIndex, awayTime = 0, hour, minute, seconds;
         IEnumerable<Label> states, employeeNames;
         IEnumerable<PictureBox> userIcons;
-        int awayTime = 0, hour, minute, seconds;
 
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -75,14 +74,8 @@ namespace Company_Person_Status__CPS_
             if(label3.Text == "Away") { 
                 clientResponse = client.Get("");
                 allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
-                foreach (var user in allUsers)
-                {
-                    if (user.Value.FullName.Equals(loggedInUser.FullName))
-                    {
-                        changeStatus(user, (int)StatusTypes.Online, awayTime); // Polymorphism - Function Overloading
-                        break;
-                    }
-                }
+                var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(loggedInUser.FullName));
+                changeStatus(user, (int)StatusTypes.Online, awayTime); // Polymorphism - Function Overloading
                 stopTimer(); // Makes awayTime zero again.
                 label3.Text = "Online";
                 label3.ForeColor = Color.LightGreen;
@@ -95,20 +88,16 @@ namespace Company_Person_Status__CPS_
 
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
         {
+            clientResponse = client.Get("");
+            allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
             if (loggedInUser != null)
             {
-                foreach (var user in allUsers)
-                {
-                    if (user.Value.FullName.Equals(loggedInUser.FullName))
-                    {
-                        changeStatus(user, (int)StatusTypes.Offline);
-                        break;
-                    }
-                }
-                label3.ForeColor = Color.Red;
-                label3.Text = "Offline";
-                MessageBox.Show("You exited from the system and your status become offline.", "Quit");  //This is important. Do not erase this otherwise system does not update the status in db
+                var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label6.Text));
+                changeStatus(user, (int)StatusTypes.Offline);
             }
+            label3.ForeColor = Color.Red;
+            label3.Text = "Offline";
+            MessageBox.Show("You exited from the system and your status become offline.", "Quit");  //This is important. Do not erase this otherwise system does not update the status in db
         }
 
 
@@ -133,7 +122,6 @@ namespace Company_Person_Status__CPS_
             loggedInUser = user;
             if (loggedInUser != null)
             {
-                label6.Text = loggedInUser.FullName;
                 label3.ForeColor = Color.LightGreen;
                 label3.Text = "Online";
                 ControlButton.BackColor = Color.DarkOrange;
@@ -173,26 +161,14 @@ namespace Company_Person_Status__CPS_
                         ControlButton.Text = "          Go Online";
                         ControlButton.ForeColor = Color.White;
                         label4.Visible = true;
-                        foreach (var user in allUsers)
-                        {
-                            if (user.Value.FullName.Equals(loggedInUser.FullName))
-                            {
-                                changeStatus(user, (int)StatusTypes.Away);
-                                break;
-                            }
-                        }
+                        var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(loggedInUser.FullName));
+                        changeStatus(user, (int)StatusTypes.Away);
                         break;
                     }
                 case "Away":
                     {
-                        foreach (var user in allUsers)
-                        {
-                            if (user.Value.FullName.Equals(loggedInUser.FullName))
-                            {
-                                changeStatus(user, (int)StatusTypes.Online, awayTime); // Polymorphism - Function Overloading
-                                break;
-                            }
-                        }
+                        var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(loggedInUser.FullName));
+                        changeStatus(user, (int)StatusTypes.Online, awayTime);
                         stopTimer(); // Makes awayTime zero again.
                         label3.Text = "Online";
                         label3.ForeColor = Color.LightGreen;
@@ -208,6 +184,7 @@ namespace Company_Person_Status__CPS_
         private void AdminPanelButton_Click(object sender, EventArgs e)
         {
             AdminPanelForm apf = new AdminPanelForm();
+            apf.Owner = this;
             apf.Show();
         }
 
@@ -230,6 +207,9 @@ namespace Company_Person_Status__CPS_
         {
             index = userIcons.Count() - 1; // Local variables
             userIndex = 20;
+
+            if(loggedInUser != null)
+            label6.Text = allUsers.FirstOrDefault(x => x.Value.Id.Equals(loggedInUser.Id)).Value.FullName;
 
             foreach (var user in allUsers)
             {
@@ -256,9 +236,10 @@ namespace Company_Person_Status__CPS_
                                 break;
                             }
                         default:
-                            { if (index > (userIndex - allUsers.Count()))
+                            {
+                                if (index > (userIndex - allUsers.Count()))
                                 {
-                                    userIcons.ElementAt(index).Visible = true;
+                                    userIcons.ElementAt(index).BackgroundImage = Properties.Resources.no_image;
                                     employeeNames.ElementAt(index).Text = user.Value.FullName;
                                     printStatus(states.ElementAt(index), user.Value.StatusId);
                                     index--;
@@ -266,7 +247,7 @@ namespace Company_Person_Status__CPS_
                                 }
                                 else if (index <= 15 && index >= 0)
                                 {
-                                    userIcons.ElementAt(index).Visible = true;
+                                    userIcons.ElementAt(index).BackgroundImage = Properties.Resources.no_image;
                                     employeeNames.ElementAt(index).Text = user.Value.FullName;
                                     printStatus(states.ElementAt(index), user.Value.StatusId);
                                     index--;
@@ -369,6 +350,15 @@ namespace Company_Person_Status__CPS_
             seconds = (awayTime % 3600) % 60;
             label4.Text = "for " + hour.ToString("00") + ":" + minute.ToString("00") + ":" + seconds.ToString("00");
             awayTime++;
+        }
+
+        public void removeUserFieldIfUserRemoved(string username)
+        {
+            Label removedEmployeeName = employeeNames.FirstOrDefault(x => x.Text.Equals(username));
+            int index = employeeNames.ToList().IndexOf(removedEmployeeName);
+            userIcons.ElementAt(index).BackgroundImage = null;
+            states.ElementAt(index).ResetText();
+            employeeNames.ElementAt(index).ResetText();
         }
     }
     public class GlobalMouseHandler : IMessageFilter

@@ -4,6 +4,7 @@ using FireSharp.Response;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Company_Person_Status__CPS_
@@ -86,35 +87,32 @@ namespace Company_Person_Status__CPS_
                 DialogResult dialogResult = MessageBox.Show("Are you sure to remove " + listBox1.SelectedItem.ToString() + " from the CPS system?", "Remove User", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    foreach (var user in allUsers)
+                    var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(listBox1.SelectedItem.ToString()));
+                    if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer)
                     {
-                        if (user.Value.FullName.Equals(listBox1.SelectedItem.ToString()))
+                        MessageBox.Show("Employer cannot be deleted.");
+                    }
+                    else
+                    {
+                        var userForEdit = new User
                         {
-                            if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer)
-                            {
-                                MessageBox.Show("Employer cannot be deleted.");
-                                break;
-                            }
-                            var userForEdit = new User
-                            {
-                                Id = user.Value.Id,
-                                AuthorizationLevelId = user.Value.AuthorizationLevelId,
-                                AwayFor = user.Value.AwayFor,
-                                FullName = user.Value.FullName,
-                                Password = user.Value.Password,
-                                StatusId = user.Value.StatusId,
-                                ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
-                                ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
-                                TodaysAwayDuration = user.Value.TodaysAwayDuration,
-                                Username = user.Value.Username,
-                                isDeleted = true
-                            };
-                            client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
-                            listBox1.Items.Remove(listBox1.SelectedItem.ToString());
-                            MessageBox.Show("User deleted.");
-                            checkPeopleAndDisableAddButton();
-                            break;
-                        }
+                            Id = user.Value.Id,
+                            AuthorizationLevelId = user.Value.AuthorizationLevelId,
+                            AwayFor = user.Value.AwayFor,
+                            FullName = user.Value.FullName,
+                            Password = user.Value.Password,
+                            StatusId = user.Value.StatusId,
+                            ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration,
+                            ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration,
+                            TodaysAwayDuration = user.Value.TodaysAwayDuration,
+                            Username = user.Value.Username,
+                            isDeleted = true
+                        };
+                        client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
+                        listBox1.Items.Remove(listBox1.SelectedItem.ToString());
+                        MessageBox.Show("User deleted.");
+                        checkPeopleAndDisableAddButton();
+                        (this.Owner as Form1).removeUserFieldIfUserRemoved(userForEdit.FullName);
                     }
                 }
             }
@@ -140,7 +138,7 @@ namespace Company_Person_Status__CPS_
                         ThisWeekAwayDuration = 0,
                         TodaysAwayDuration = 0,
                         Username = user.Value.Username,
-                        isDeleted = false
+                        isDeleted = user.Value.isDeleted
                     };
                     client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
                 }

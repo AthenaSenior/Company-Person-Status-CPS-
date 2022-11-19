@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -42,16 +43,11 @@ namespace Company_Person_Status__CPS_
         private void TrackDurationForm_Load(object sender, EventArgs e)
         {
             label1.Text = AdminPanelForm.userFullName;
-            foreach (var user in allUsers)
-            {
-                if (label1.Text.Equals(user.Value.FullName))
-                {
-                    convertDailyAwaySeconds(user.Value.TodaysAwayDuration);
-                    convertWeeklyAwaySeconds(user.Value.ThisWeekAwayDuration); 
-                    convertMonthlyAwaySeconds(user.Value.ThisMonthAwayDuration);
-                    printStatus(user.Value.StatusId);
-                }
-            }
+            var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+            convertDailyAwaySeconds(user.Value.TodaysAwayDuration);
+            convertWeeklyAwaySeconds(user.Value.ThisWeekAwayDuration);
+            convertMonthlyAwaySeconds(user.Value.ThisMonthAwayDuration);
+            printStatus(user.Value.StatusId);
         }
 
         private void convertDailyAwaySeconds(int seconds)

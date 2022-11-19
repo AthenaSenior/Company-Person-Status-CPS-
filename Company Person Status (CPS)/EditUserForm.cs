@@ -4,6 +4,7 @@ using FireSharp.Response;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Company_Person_Status__CPS_
@@ -42,80 +43,63 @@ namespace Company_Person_Status__CPS_
         {
             if (comboBox1.SelectedIndex == (int)AuthorizationTypes.Employer - 1)
             {
-                foreach (var user in allUsers)
+                var user = allUsers.FirstOrDefault(x => x.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer);
+                if (user.Key != null && !changeEmployer)
                 {
-                    if ((user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer) && !changeEmployer)
-                    {
-                        MessageBox.Show("Cannot add another employer. There is only one: " + user.Value.FullName);
-                        return;
-                    }
-                    if (label1.Text.Equals(user.Value.FullName))
-                    {
-                        updateUser(user);
-                        break;
-                    }
+                    MessageBox.Show("Cannot add another employer. There is only one: " + user.Value.FullName);
+                    return;
+                }
+                else
+                {
+                    user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                    updateUser(user);
                 }
             }
 
 
             else if (comboBox1.SelectedIndex == (int)AuthorizationTypes.CEO - 1)
             {
-                foreach (var user in allUsers)
+                var user = allUsers.FirstOrDefault(x => x.Value.AuthorizationLevelId == (int)AuthorizationTypes.CEO);
+                if (user.Key != null && !changeCEO)
                 {
-                    if ((user.Value.AuthorizationLevelId == (int)AuthorizationTypes.CEO) && !changeCEO)
-                    {
-                        MessageBox.Show("Cannot add another CEO. There is only one: " + user.Value.FullName);
-                        return;
-                    }
-                    if (label1.Text.Equals(user.Value.FullName))
-                    {
-                        updateUser(user);
-                        break;
-                    }
+                    MessageBox.Show("Cannot add another CEO. There is only one: " + user.Value.FullName);
+                    return;
+                }
+                else
+                {
+                    user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                    updateUser(user);
                 }
             }
 
 
             else if (comboBox1.SelectedIndex == (int)AuthorizationTypes.Manager - 1)
             {
-                foreach (var user in allUsers)
+                var user = allUsers.FirstOrDefault(x => x.Value.AuthorizationLevelId == (int)AuthorizationTypes.Manager);
+                if(user.Key != null && !changeManager)
                 {
-                    if ((user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Manager) && !changeManager)
-                    {
-                        MessageBox.Show("Cannot add another manager. There is only one: " + user.Value.FullName);
-                        return;
-                    }
-
-                    if (label1.Text.Equals(user.Value.FullName))
-                    {
-                        updateUser(user);
-                        break;
-                    }
+                    MessageBox.Show("Cannot add another manager. There is only one: " + user.Value.FullName);
+                    return;
+                }
+                else
+                {
+                    user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                    updateUser(user);
                 }
             }
+
             else
             {
-                foreach (var user in allUsers)
-                {
-                    if (label1.Text.Equals(user.Value.FullName))
-                    {
-                        updateUser(user);
-                        break;
-                    }
-                }
+                 var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                 updateUser(user);
             }
         }
 
         private void EditUserForm_Load(object sender, EventArgs e)
         {
             label1.Text = AdminPanelForm.userFullName;
-            foreach (var user in allUsers)
-            {
-                if (label1.Text.Equals(user.Value.FullName))
-                {
-                    getSelectedUserData(user);
-                }
-            }
+            var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+            getSelectedUserData(user);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -123,14 +107,8 @@ namespace Company_Person_Status__CPS_
             DialogResult dialogResult = MessageBox.Show("Are you sure to reset all away durations of " + label1.Text + "? \n\nWith this action, " + label1.Text + "'s all away durations become zero.", "Reset Duration", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                foreach (var user in allUsers)
-                {
-                    if (label1.Text.Equals(user.Value.FullName))
-                    {
-                        resetUserDuration(user);
-                        break;
-                    }
-                }
+                var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                resetUserDuration(user);
             }
         }
 

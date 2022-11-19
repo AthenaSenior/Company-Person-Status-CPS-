@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -35,22 +36,17 @@ namespace Company_Person_Status__CPS_
                 MessageBox.Show("No internet connection found. Please contact with your employer.");
             }
             InitializeComponent();
-            clientResponse = client.Get("");
-            allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
         }
 
         private void TrackOwnDurationForm_Load(object sender, EventArgs e)
         {
+            clientResponse = client.Get("");
+            allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
             label1.Text = Form1.userFullName;
-            foreach (var user in allUsers)
-            {
-                if (label1.Text.Equals(user.Value.FullName))
-                {
-                    convertDailyAwaySeconds(user.Value.TodaysAwayDuration);
-                    setAuthorityText(user.Value.AuthorizationLevelId);
-                    printStatus(user.Value.StatusId);
-                }
-            }
+            var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+            convertDailyAwaySeconds(user.Value.TodaysAwayDuration);
+            setAuthorityText(user.Value.AuthorizationLevelId);
+            printStatus(user.Value.StatusId);
         }
 
         private void setAuthorityText(int authorizationLevelId)

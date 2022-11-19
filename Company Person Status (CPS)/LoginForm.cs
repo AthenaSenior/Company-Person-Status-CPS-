@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
-
+using System.Linq;
 
 namespace Company_Person_Status__CPS_
 {
@@ -41,17 +41,14 @@ namespace Company_Person_Status__CPS_
 
         private void button1_Click(object sender, EventArgs e) // Check User and Login
         {
-            foreach (var user in allUsers)
+            var user = allUsers.FirstOrDefault(x => x.Value.Username.Equals(textBox1.Text) && x.Value.Password.Equals(textBox2.Text) && !x.Value.isDeleted);
+            if(user.Key != null)
             {
-                if (textBox1.Text.Equals(user.Value.Username) && textBox2.Text.Equals(user.Value.Password) && !user.Value.isDeleted)
-                {
-                    logInToSystem(user);
-                    break;
-                }
-                else
-                {
-                    label3.Visible = true; // Error message to user.
-                }
+                logInToSystem(user);
+            }
+            else
+            {
+                label3.Visible = true; // Error message to user.
             }
         }
         private void logInToSystem(KeyValuePair<string, User> user)
