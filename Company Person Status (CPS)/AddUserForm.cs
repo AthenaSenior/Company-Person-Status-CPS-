@@ -12,7 +12,6 @@ namespace Company_Person_Status__CPS_
     public partial class AddUserForm : Form
     {
         // Variables //
-        private int userCount = 0;
         private readonly int MAX_PEOPLE = 24;
         
         IFirebaseConfig config = new FirebaseConfig

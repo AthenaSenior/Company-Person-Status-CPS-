@@ -87,17 +87,17 @@ namespace Company_Person_Status__CPS_
     }
 
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
-        {
-            clientResponse = client.Get("");
-            allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
+        { 
             if (loggedInUser != null)
             {
+                clientResponse = client.Get("");
+                allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
                 var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label6.Text));
                 changeStatus(user, (int)StatusTypes.Offline);
+                label3.ForeColor = Color.Red;
+                label3.Text = "Offline";
+                MessageBox.Show("You exited from the system and your status become offline.", "Quit");  //This is important. Do not erase this otherwise system does not update the status in db
             }
-            label3.ForeColor = Color.Red;
-            label3.Text = "Offline";
-            MessageBox.Show("You exited from the system and your status become offline.", "Quit");  //This is important. Do not erase this otherwise system does not update the status in db
         }
 
 

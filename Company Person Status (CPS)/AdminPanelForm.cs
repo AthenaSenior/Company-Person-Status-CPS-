@@ -169,10 +169,5 @@ namespace Company_Person_Status__CPS_
             button3.Enabled = true;
             button4.Enabled = true;
         }
-
-        public int getMaxPeople()
-        {
-            return MAX_PEOPLE;
-        }
     }
 }
