@@ -128,6 +128,7 @@ namespace Company_Person_Status__CPS_
             this.EmployeeNames3 = new System.Windows.Forms.Label();
             this.name101 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -165,7 +166,7 @@ namespace Company_Person_Status__CPS_
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.output_onlinepngtools__10_;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(853, 409);
@@ -176,7 +177,7 @@ namespace Company_Person_Status__CPS_
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.AnkameeLogo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(336, 12);
@@ -202,6 +203,8 @@ namespace Company_Person_Status__CPS_
             this.button1.BackgroundImage = global::Company_Person_Status__CPS_.Properties.Resources.button;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(417, 200);
             this.button1.Name = "button1";
@@ -213,6 +216,8 @@ namespace Company_Person_Status__CPS_
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::Company_Person_Status__CPS_.Properties.Resources.HelpButton;
             this.button2.Location = new System.Drawing.Point(417, 300);
@@ -225,6 +230,8 @@ namespace Company_Person_Status__CPS_
             // button3
             // 
             this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::Company_Person_Status__CPS_.Properties.Resources.ExitButton;
             this.button3.Location = new System.Drawing.Point(417, 400);
@@ -1260,6 +1267,10 @@ namespace Company_Person_Status__CPS_
             this.name101.Size = new System.Drawing.Size(0, 21);
             this.name101.TabIndex = 0;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1415,6 +1426,7 @@ namespace Company_Person_Status__CPS_
         private System.Windows.Forms.Label name116;
         private System.Windows.Forms.PictureBox infoButton;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

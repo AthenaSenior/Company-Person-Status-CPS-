@@ -1,7 +1,6 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
-using FireSharp.EventStreaming;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Linq;
-using System.Timers;
 
 namespace Company_Person_Status__CPS_
 {
@@ -18,7 +16,8 @@ namespace Company_Person_Status__CPS_
         // Variables
         public User loggedInUser;
         public static string userFullName = "";
-        private int index, userIndex, awayTime = 0, hour, minute, seconds;
+        public static bool mouseMoved;
+        private int index, userIndex, awayTime = 0, hour, minute, seconds, inactivityTime = 0;
         IEnumerable<Label> states, employeeNames;
         IEnumerable<PictureBox> userIcons;
 
@@ -42,39 +41,34 @@ namespace Company_Person_Status__CPS_
             {
                 MessageBox.Show("No internet connection found. Please contact with your employer.");
             }
-            InitializeComponent();
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox1.BackColor = Color.Transparent;
-            button1.BackColor = Color.Transparent;
-            button2.BackColor = Color.Transparent;
-            button3.BackColor = Color.Transparent;
-            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
+
             this.Closing += OnClosing;
-            states = panel5.Controls.OfType<Label>()
-                .Where(label => label.Name.StartsWith("status"));
-            employeeNames = panel5.Controls.OfType<Label>()
-                .Where(label => label.Name.StartsWith("name"));
-            userIcons = panel5.Controls.OfType<PictureBox>()
-                .Where(label => label.Name.StartsWith("pictureBox"));
+
             clientResponse = client.Get("");
             allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
-            timer1.Interval = 1000;
-            GlobalMouseHandler.MouseMovedEvent += GlobalMouseHandler_MouseMovedEvent;
+
+            GlobalMouseHandler.MouseMovedEvent += mouseHook_MouseMoveEvent;
+            GlobalMouseHandler.MouseInactivityEvent += mouseHook_MouseInactivityEvent;
             Application.AddMessageFilter(new GlobalMouseHandler());
+
+            InitializeComponent();
+            timer1.Interval = 1000;
+            states = panel5.Controls.OfType<Label>().Where(label => label.Name.StartsWith("status"));
+            employeeNames = panel5.Controls.OfType<Label>().Where(label => label.Name.StartsWith("name"));
+            userIcons = panel5.Controls.OfType<PictureBox>().Where(label => label.Name.StartsWith("pictureBox"));
         }
 
+
         // Methods
-        private void GlobalMouseHandler_MouseMovedEvent(object sender, MouseEventArgs e) // If mouse makes an activity.
+
+        private void mouseHook_MouseMoveEvent(object sender, MouseEventArgs e) // If mouse makes an activity.
         {
-            if(label3.Text == "Away") { 
+            stopInactivityTimer();
+            if (label3.Text == "Away")
+            {
                 clientResponse = client.Get("");
                 allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
-                var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(loggedInUser.FullName));
+                var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label6.Text));
                 changeStatus(user, (int)StatusTypes.Online, awayTime); // Polymorphism - Function Overloading
                 stopTimer(); // Makes awayTime zero again.
                 label3.Text = "Online";
@@ -83,17 +77,22 @@ namespace Company_Person_Status__CPS_
                 ControlButton.Text = "            Go Away";
                 ControlButton.ForeColor = Color.Black;
                 label4.Visible = false;
+            }
         }
-    }
+
+        private void mouseHook_MouseInactivityEvent(object sender, MouseEventArgs e) // If mouse stays inactive.
+        {
+            startInactivityTimer();
+        }
 
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
-        { 
+        {
             if (loggedInUser != null)
             {
                 clientResponse = client.Get("");
                 allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
                 var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label6.Text));
-                changeStatus(user, (int)StatusTypes.Offline);
+                changeStatus(user, (int)StatusTypes.Offline, awayTime);
                 label3.ForeColor = Color.Red;
                 label3.Text = "Offline";
                 MessageBox.Show("You exited from the system and your status become offline.", "Quit");  //This is important. Do not erase this otherwise system does not update the status in db
@@ -161,13 +160,13 @@ namespace Company_Person_Status__CPS_
                         ControlButton.Text = "          Go Online";
                         ControlButton.ForeColor = Color.White;
                         label4.Visible = true;
-                        var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(loggedInUser.FullName));
+                        var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label6.Text));
                         changeStatus(user, (int)StatusTypes.Away);
                         break;
                     }
                 case "Away":
                     {
-                        var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(loggedInUser.FullName));
+                        var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label6.Text));
                         changeStatus(user, (int)StatusTypes.Online, awayTime);
                         stopTimer(); // Makes awayTime zero again.
                         label3.Text = "Online";
@@ -208,8 +207,8 @@ namespace Company_Person_Status__CPS_
             index = userIcons.Count() - 1; // Local variables
             userIndex = 20;
 
-            if(loggedInUser != null)
-            label6.Text = allUsers.FirstOrDefault(x => x.Value.Id.Equals(loggedInUser.Id)).Value.FullName;
+            if (loggedInUser != null)
+                label6.Text = allUsers.FirstOrDefault(x => x.Value.Id.Equals(loggedInUser.Id)).Value.FullName;
 
             foreach (var user in allUsers)
             {
@@ -261,7 +260,7 @@ namespace Company_Person_Status__CPS_
 
         private void infoButton_Click(object sender, EventArgs e)
         {
-            userFullName = loggedInUser.FullName;
+            userFullName = label6.Text;
             TrackOwnDurationForm todf = new TrackOwnDurationForm();
             todf.Show();
         }
@@ -352,6 +351,40 @@ namespace Company_Person_Status__CPS_
             awayTime++;
         }
 
+        private void startInactivityTimer()
+        {
+            timer2.Start();
+            timer2.Tick += new EventHandler(timer2_Tick);
+        }
+
+        private void stopInactivityTimer()
+        {
+            timer2.Stop();
+            timer2.Tick -= new EventHandler(timer2_Tick);
+            inactivityTime = 0;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            inactivityTime++;
+
+            if (inactivityTime == 60 && label3.Text == "Online")
+            {
+                clientResponse = client.Get("");
+                allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
+                var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label6.Text));
+                changeStatus(user, (int)StatusTypes.Away);
+                startTimer();
+                label4.Text = "for 00:00:00";
+                label3.Text = "Away";
+                label3.ForeColor = Color.DarkOrange;
+                ControlButton.BackColor = Color.Green;
+                ControlButton.Text = "          Go Online";
+                ControlButton.ForeColor = Color.White;
+                label4.Visible = true;
+            }
+        }
+
         public void removeUserFieldIfUserRemoved(string username)
         {
             Label removedEmployeeName = employeeNames.FirstOrDefault(x => x.Text.Equals(username));
@@ -363,26 +396,26 @@ namespace Company_Person_Status__CPS_
     }
     public class GlobalMouseHandler : IMessageFilter
     {
-        private const int WM_MOUSEMOVE = 0x0200;
-        private System.Drawing.Point previousMousePosition = new System.Drawing.Point();
+        private Point previousMousePosition = new Point();
         public static event EventHandler<MouseEventArgs> MouseMovedEvent = delegate { };
+        public static event EventHandler<MouseEventArgs> MouseInactivityEvent = delegate { };
 
         #region IMessageFilter Members
 
-        public bool PreFilterMessage(ref System.Windows.Forms.Message m)
+        public bool PreFilterMessage(ref Message m)
         {
-            if (m.Msg == WM_MOUSEMOVE)
+            Point currentMousePoint = Control.MousePosition;
+            if (previousMousePosition.X != currentMousePoint.X || previousMousePosition.Y != currentMousePoint.Y)
             {
-                System.Drawing.Point currentMousePoint = Control.MousePosition;
-                if (previousMousePosition.X != currentMousePoint.X && previousMousePosition.Y != currentMousePoint.Y)
-                {
-                    previousMousePosition = currentMousePoint;
-                    MouseMovedEvent(this, new MouseEventArgs(MouseButtons.None, 0, currentMousePoint.X, currentMousePoint.Y, 0));
-                }
+                previousMousePosition = currentMousePoint;
+                MouseMovedEvent(this, new MouseEventArgs(MouseButtons.None, 0, currentMousePoint.X, currentMousePoint.Y, 0));
+            }
+            else
+            {
+                MouseInactivityEvent(this, new MouseEventArgs(MouseButtons.None, 0, currentMousePoint.X, currentMousePoint.Y, 0));
             }
             return false;
         }
-
         #endregion
     }
 }
