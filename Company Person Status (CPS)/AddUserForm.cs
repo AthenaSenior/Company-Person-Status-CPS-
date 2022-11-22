@@ -127,7 +127,6 @@ namespace Company_Person_Status__CPS_
             {
                 Id = allUsers.Count + 101,
                 AuthorizationLevelId = comboBox1.SelectedIndex + 1,
-                AwayFor = 0,
                 FullName = textBox3.Text,
                 Password = textBox1.Text,
                 StatusId = (int)StatusTypes.Offline,
@@ -153,7 +152,6 @@ namespace Company_Person_Status__CPS_
             {
                 Id = userId,
                 AuthorizationLevelId = comboBox1.SelectedIndex + 1,
-                AwayFor = 0,
                 FullName = textBox3.Text,
                 Password = textBox1.Text,
                 StatusId = (int)StatusTypes.Offline,
@@ -172,8 +170,5 @@ namespace Company_Person_Status__CPS_
             }
             this.Close();
         }
-
-
-
     }
 }

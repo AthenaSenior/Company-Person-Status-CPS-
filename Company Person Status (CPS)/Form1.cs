@@ -16,7 +16,7 @@ namespace Company_Person_Status__CPS_
         // Variables
         public User loggedInUser;
         public static string userFullName = "";
-        public static bool mouseMoved;
+        private readonly int inactivityConstant = 600;
         private int index, userIndex, awayTime = 0, hour, minute, seconds, inactivityTime = 0;
         IEnumerable<Label> states, employeeNames;
         IEnumerable<PictureBox> userIcons;
@@ -42,17 +42,14 @@ namespace Company_Person_Status__CPS_
                 MessageBox.Show("No internet connection found. Please contact with your employer.");
             }
 
-            this.Closing += OnClosing;
+            this.FormClosing += OnClosing;
 
             clientResponse = client.Get("");
             allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
 
-            GlobalMouseHandler.MouseMovedEvent += mouseHook_MouseMoveEvent;
-            GlobalMouseHandler.MouseInactivityEvent += mouseHook_MouseInactivityEvent;
-            Application.AddMessageFilter(new GlobalMouseHandler());
-
             InitializeComponent();
             timer1.Interval = 1000;
+            timer2.Interval = 10000;
             states = panel5.Controls.OfType<Label>().Where(label => label.Name.StartsWith("status"));
             employeeNames = panel5.Controls.OfType<Label>().Where(label => label.Name.StartsWith("name"));
             userIcons = panel5.Controls.OfType<PictureBox>().Where(label => label.Name.StartsWith("pictureBox"));
@@ -74,7 +71,7 @@ namespace Company_Person_Status__CPS_
                 label3.Text = "Online";
                 label3.ForeColor = Color.LightGreen;
                 ControlButton.BackColor = Color.DarkOrange;
-                ControlButton.Text = "            Go Away";
+                ControlButton.Text = "Go Away";
                 ControlButton.ForeColor = Color.Black;
                 label4.Visible = false;
             }
@@ -121,11 +118,14 @@ namespace Company_Person_Status__CPS_
             loggedInUser = user;
             if (loggedInUser != null)
             {
+                GlobalMouseHandler.MouseMovedEvent += mouseHook_MouseMoveEvent;
+                GlobalMouseHandler.MouseInactivityEvent += mouseHook_MouseInactivityEvent;
+                Application.AddMessageFilter(new GlobalMouseHandler());
                 label3.ForeColor = Color.LightGreen;
                 label3.Text = "Online";
                 ControlButton.BackColor = Color.DarkOrange;
                 ControlButton.ForeColor = Color.Black;
-                ControlButton.Text = "            Go Away";
+                ControlButton.Text = "Go Away";
 
                 switch (loggedInUser.AuthorizationLevelId)
                 {
@@ -157,7 +157,7 @@ namespace Company_Person_Status__CPS_
                         label3.Text = "Away";
                         label3.ForeColor = Color.DarkOrange;
                         ControlButton.BackColor = Color.Green;
-                        ControlButton.Text = "          Go Online";
+                        ControlButton.Text = "Go Online";
                         ControlButton.ForeColor = Color.White;
                         label4.Visible = true;
                         var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label6.Text));
@@ -172,7 +172,7 @@ namespace Company_Person_Status__CPS_
                         label3.Text = "Online";
                         label3.ForeColor = Color.LightGreen;
                         ControlButton.BackColor = Color.DarkOrange;
-                        ControlButton.Text = "            Go Away";
+                        ControlButton.Text = "Go Away";
                         ControlButton.ForeColor = Color.Black;
                         label4.Visible = false;
                         break;
@@ -297,7 +297,6 @@ namespace Company_Person_Status__CPS_
             {
                 Id = user.Value.Id,
                 AuthorizationLevelId = user.Value.AuthorizationLevelId,
-                AwayFor = user.Value.AwayFor,
                 FullName = user.Value.FullName,
                 Password = user.Value.Password,
                 StatusId = newStatusId,
@@ -316,7 +315,6 @@ namespace Company_Person_Status__CPS_
             {
                 Id = user.Value.Id,
                 AuthorizationLevelId = user.Value.AuthorizationLevelId,
-                AwayFor = user.Value.AwayFor,
                 FullName = user.Value.FullName,
                 Password = user.Value.Password,
                 StatusId = newStatusId,
@@ -368,7 +366,7 @@ namespace Company_Person_Status__CPS_
         {
             inactivityTime++;
 
-            if (inactivityTime == 60 && label3.Text == "Online")
+            if (inactivityTime == inactivityConstant && label3.Text == "Online")
             {
                 clientResponse = client.Get("");
                 allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
@@ -379,7 +377,7 @@ namespace Company_Person_Status__CPS_
                 label3.Text = "Away";
                 label3.ForeColor = Color.DarkOrange;
                 ControlButton.BackColor = Color.Green;
-                ControlButton.Text = "          Go Online";
+                ControlButton.Text = "Go Online";
                 ControlButton.ForeColor = Color.White;
                 label4.Visible = true;
             }

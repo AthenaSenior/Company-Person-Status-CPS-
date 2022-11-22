@@ -10,9 +10,6 @@ namespace Company_Person_Status__CPS_
         [JsonProperty(PropertyName = "AuthorizationLevelId", NullValueHandling = NullValueHandling.Ignore)]
         public int AuthorizationLevelId { get; set; }
 
-        [JsonProperty(PropertyName = "AwayFor", NullValueHandling = NullValueHandling.Ignore)]
-        public int AwayFor { get; set; }
-
         [JsonProperty(PropertyName = "FullName", NullValueHandling = NullValueHandling.Ignore)]
         public string FullName { get; set; }
 

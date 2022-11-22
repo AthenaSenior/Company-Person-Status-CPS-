@@ -5,6 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Company_Person_Status__CPS_</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>output-onlinepngtools (1).ico</ApplicationIcon>
+    <AssemblyName>Company Person Status - AnkaMEE</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

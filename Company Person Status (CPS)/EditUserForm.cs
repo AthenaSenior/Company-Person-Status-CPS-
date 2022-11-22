@@ -118,7 +118,6 @@ namespace Company_Person_Status__CPS_
             {
                 Id = user.Value.Id,
                 AuthorizationLevelId = comboBox1.SelectedIndex + 1,
-                AwayFor = user.Value.AwayFor,
                 FullName = textBox1.Text,
                 Password = user.Value.Password,
                 StatusId = user.Value.StatusId,
@@ -181,7 +180,6 @@ namespace Company_Person_Status__CPS_
             {
                 Id = user.Value.Id,
                 AuthorizationLevelId = user.Value.AuthorizationLevelId,
-                AwayFor = user.Value.AwayFor,
                 FullName = user.Value.FullName,
                 Password = user.Value.Password,
                 StatusId = user.Value.StatusId,

@@ -402,9 +402,9 @@ namespace Company_Person_Status__CPS_
             // 
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(865, 99);
+            this.panel4.Location = new System.Drawing.Point(865, 106);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(133, 13);
+            this.panel4.Size = new System.Drawing.Size(133, 18);
             this.panel4.TabIndex = 9;
             // 
             // label5
@@ -420,8 +420,8 @@ namespace Company_Person_Status__CPS_
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(66, -3);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(66, -4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 21);
             this.label3.TabIndex = 2;
@@ -431,9 +431,9 @@ namespace Company_Person_Status__CPS_
             // panel3
             // 
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(865, 66);
+            this.panel3.Location = new System.Drawing.Point(801, 70);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(133, 21);
+            this.panel3.Size = new System.Drawing.Size(197, 24);
             this.panel3.TabIndex = 8;
             // 
             // label6
@@ -443,7 +443,7 @@ namespace Company_Person_Status__CPS_
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 21);
+            this.label6.Size = new System.Drawing.Size(197, 24);
             this.label6.TabIndex = 7;
             this.label6.Text = "-";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -455,11 +455,12 @@ namespace Company_Person_Status__CPS_
             this.AdminPanelButton.ForeColor = System.Drawing.SystemColors.Info;
             this.AdminPanelButton.Image = global::Company_Person_Status__CPS_.Properties.Resources._5363451__1_;
             this.AdminPanelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdminPanelButton.Location = new System.Drawing.Point(896, 186);
+            this.AdminPanelButton.Location = new System.Drawing.Point(896, 196);
             this.AdminPanelButton.Name = "AdminPanelButton";
             this.AdminPanelButton.Size = new System.Drawing.Size(100, 33);
             this.AdminPanelButton.TabIndex = 5;
             this.AdminPanelButton.Text = "-";
+            this.AdminPanelButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AdminPanelButton.UseVisualStyleBackColor = false;
             this.AdminPanelButton.Click += new System.EventHandler(this.AdminPanelButton_Click);
             // 
@@ -469,11 +470,12 @@ namespace Company_Person_Status__CPS_
             this.ControlButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ControlButton.Image = global::Company_Person_Status__CPS_.Properties.Resources._3063792;
             this.ControlButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ControlButton.Location = new System.Drawing.Point(896, 144);
+            this.ControlButton.Location = new System.Drawing.Point(896, 154);
             this.ControlButton.Name = "ControlButton";
             this.ControlButton.Size = new System.Drawing.Size(100, 33);
             this.ControlButton.TabIndex = 4;
             this.ControlButton.Text = "-";
+            this.ControlButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ControlButton.UseVisualStyleBackColor = true;
             this.ControlButton.Click += new System.EventHandler(this.ControlButton_Click);
             // 
@@ -482,7 +484,7 @@ namespace Company_Person_Status__CPS_
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(905, 120);
+            this.label4.Location = new System.Drawing.Point(905, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 20);
             this.label4.TabIndex = 3;
@@ -1266,10 +1268,6 @@ namespace Company_Person_Status__CPS_
             this.name101.Name = "name101";
             this.name101.Size = new System.Drawing.Size(0, 21);
             this.name101.TabIndex = 0;
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 1000;
             // 
             // Form1
             // 
