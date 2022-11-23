@@ -129,8 +129,8 @@ namespace Company_Person_Status__CPS_
             };
             client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
             MessageBox.Show("User updated.");
-            (this.Owner as AdminPanelForm).listBox1.Items.Add(userForEdit.FullName);
-            (this.Owner as AdminPanelForm).listBox1.Items.Remove((this.Owner as AdminPanelForm).listBox1.SelectedItem);
+            (this.Owner as AdminPanelForm).allUsersField.Items.Add(userForEdit.FullName);
+            (this.Owner as AdminPanelForm).allUsersField.Items.Remove((this.Owner as AdminPanelForm).allUsersField.SelectedItem);
             this.Close();
         }
 

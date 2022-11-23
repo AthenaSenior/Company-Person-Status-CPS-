@@ -395,6 +395,9 @@ namespace Company_Person_Status__CPS_
             employeeNames.ElementAt(index).ResetText();
         }
     }
+
+    // New Class
+
     public class GlobalMouseHandler : IMessageFilter
     {
         private Point previousMousePosition = new Point();

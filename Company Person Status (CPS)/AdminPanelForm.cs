@@ -54,20 +54,20 @@ namespace Company_Person_Status__CPS_
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null)
+            if (allUsersField.SelectedItem != null)
             {
                 TrackDurationForm tdf = new TrackDurationForm();
-                userFullName = listBox1.SelectedItem.ToString();
+                userFullName = allUsersField.SelectedItem.ToString();
                 tdf.Show();
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(listBox1.SelectedItem != null)
+            if(allUsersField.SelectedItem != null)
             {
                 EditUserForm euf = new EditUserForm();
-                userFullName = listBox1.SelectedItem.ToString();
+                userFullName = allUsersField.SelectedItem.ToString();
                 euf.Owner = this;
                 euf.Show();
             }
@@ -82,12 +82,12 @@ namespace Company_Person_Status__CPS_
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null)
+            if (allUsersField.SelectedItem != null)
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure to remove " + listBox1.SelectedItem.ToString() + " from the CPS system?", "Remove User", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Are you sure to remove " + allUsersField.SelectedItem.ToString() + " from the CPS system?", "Remove User", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(listBox1.SelectedItem.ToString()));
+                    var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(allUsersField.SelectedItem.ToString()));
                     if (user.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer)
                     {
                         MessageBox.Show("Employer cannot be deleted.");
@@ -108,7 +108,7 @@ namespace Company_Person_Status__CPS_
                             isDeleted = true
                         };
                         client.UpdateAsync("/User" + userForEdit.Id, userForEdit);
-                        listBox1.Items.Remove(listBox1.SelectedItem.ToString());
+                        allUsersField.Items.Remove(allUsersField.SelectedItem.ToString());
                         MessageBox.Show("User deleted.");
                         checkPeopleAndDisableAddButton();
                         (this.Owner as Form1).removeUserFieldIfUserRemoved(userForEdit.FullName);
@@ -147,25 +147,25 @@ namespace Company_Person_Status__CPS_
         private void addUserIntoList(KeyValuePair<string, User> user)
         {
             if (!user.Value.isDeleted)
-                listBox1.Items.Add(user.Value.FullName);
+                allUsersField.Items.Add(user.Value.FullName);
         }
 
         private void checkPeopleAndDisableAddButton()
         {
-            if (listBox1.Items.Count >= MAX_PEOPLE) // If members are full, cannot add more (24 for this CPS)
+            if (allUsersField.Items.Count >= MAX_PEOPLE) // If members are full, cannot add more (24 for this CPS)
             {
-                button1.Enabled = false;
+                addUserButton.Enabled = false;
             }
-            else if (listBox1.Items.Count < MAX_PEOPLE)
+            else if (allUsersField.Items.Count < MAX_PEOPLE)
             {
-                button1.Enabled = true;
+                addUserButton.Enabled = true;
             }
         }
         private void enableOtherButtons()
         {
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
+            trackDurationButton.Enabled = true;
+            removeUserButton.Enabled = true;
+            editUserButton.Enabled = true;
         }
     }
 }

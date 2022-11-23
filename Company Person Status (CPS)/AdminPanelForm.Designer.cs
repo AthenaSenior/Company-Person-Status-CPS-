@@ -36,12 +36,12 @@ namespace Company_Person_Status__CPS_
             this.DurationResetButton = new System.Windows.Forms.Button();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ımageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.allUsersField = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.addUserButton = new System.Windows.Forms.Button();
+            this.trackDurationButton = new System.Windows.Forms.Button();
+            this.removeUserButton = new System.Windows.Forms.Button();
+            this.editUserButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -95,16 +95,16 @@ namespace Company_Person_Status__CPS_
             this.ımageList2.ImageSize = new System.Drawing.Size(16, 16);
             this.ımageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // listBox1
+            // allUsersField
             // 
-            this.listBox1.BackColor = System.Drawing.Color.Silver;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(48, 145);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(304, 289);
-            this.listBox1.TabIndex = 3;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.allUsersField.BackColor = System.Drawing.Color.Silver;
+            this.allUsersField.FormattingEnabled = true;
+            this.allUsersField.ItemHeight = 15;
+            this.allUsersField.Location = new System.Drawing.Point(48, 145);
+            this.allUsersField.Name = "allUsersField";
+            this.allUsersField.Size = new System.Drawing.Size(304, 289);
+            this.allUsersField.TabIndex = 3;
+            this.allUsersField.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -117,68 +117,68 @@ namespace Company_Person_Status__CPS_
             this.label2.TabIndex = 4;
             this.label2.Text = "All Users";
             // 
-            // button1
+            // addUserButton
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Image = global::Company_Person_Status__CPS_.Properties.Resources._5363451__1_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(436, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 47);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Add User";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addUserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addUserButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.addUserButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addUserButton.Image = global::Company_Person_Status__CPS_.Properties.Resources._5363451__1_;
+            this.addUserButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addUserButton.Location = new System.Drawing.Point(436, 145);
+            this.addUserButton.Name = "addUserButton";
+            this.addUserButton.Size = new System.Drawing.Size(181, 47);
+            this.addUserButton.TabIndex = 5;
+            this.addUserButton.Text = "Add User";
+            this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // trackDurationButton
             // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Image = global::Company_Person_Status__CPS_.Properties.Resources._3063792;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(436, 387);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 47);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "    Track Away Duration";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.trackDurationButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.trackDurationButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.trackDurationButton.Enabled = false;
+            this.trackDurationButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.trackDurationButton.Image = global::Company_Person_Status__CPS_.Properties.Resources._3063792;
+            this.trackDurationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.trackDurationButton.Location = new System.Drawing.Point(436, 387);
+            this.trackDurationButton.Name = "trackDurationButton";
+            this.trackDurationButton.Size = new System.Drawing.Size(181, 47);
+            this.trackDurationButton.TabIndex = 6;
+            this.trackDurationButton.Text = "    Track Away Duration";
+            this.trackDurationButton.UseVisualStyleBackColor = true;
+            this.trackDurationButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // removeUserButton
             // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Image = global::Company_Person_Status__CPS_.Properties.Resources.output_onlinepngtools__4___1_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(436, 301);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 47);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Remove User";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.removeUserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.removeUserButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.removeUserButton.Enabled = false;
+            this.removeUserButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.removeUserButton.Image = global::Company_Person_Status__CPS_.Properties.Resources.output_onlinepngtools__4___1_;
+            this.removeUserButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.removeUserButton.Location = new System.Drawing.Point(436, 301);
+            this.removeUserButton.Name = "removeUserButton";
+            this.removeUserButton.Size = new System.Drawing.Size(181, 47);
+            this.removeUserButton.TabIndex = 7;
+            this.removeUserButton.Text = "Remove User";
+            this.removeUserButton.UseVisualStyleBackColor = true;
+            this.removeUserButton.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // editUserButton
             // 
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Image = global::Company_Person_Status__CPS_.Properties.Resources._166256;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(436, 224);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(181, 47);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Edit User";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.editUserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.editUserButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.editUserButton.Enabled = false;
+            this.editUserButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.editUserButton.Image = global::Company_Person_Status__CPS_.Properties.Resources._166256;
+            this.editUserButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editUserButton.Location = new System.Drawing.Point(436, 224);
+            this.editUserButton.Name = "editUserButton";
+            this.editUserButton.Size = new System.Drawing.Size(181, 47);
+            this.editUserButton.TabIndex = 8;
+            this.editUserButton.Text = "Edit User";
+            this.editUserButton.UseVisualStyleBackColor = true;
+            this.editUserButton.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox2
             // 
@@ -197,12 +197,12 @@ namespace Company_Person_Status__CPS_
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(700, 494);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.editUserButton);
+            this.Controls.Add(this.removeUserButton);
+            this.Controls.Add(this.trackDurationButton);
+            this.Controls.Add(this.addUserButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.allUsersField);
             this.Controls.Add(this.DurationResetButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -228,11 +228,11 @@ namespace Company_Person_Status__CPS_
         private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.ImageList ımageList2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button trackDurationButton;
+        private System.Windows.Forms.Button removeUserButton;
+        private System.Windows.Forms.Button editUserButton;
         private System.Windows.Forms.PictureBox pictureBox2;
-        public System.Windows.Forms.ListBox listBox1;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ListBox allUsersField;
+        public System.Windows.Forms.Button addUserButton;
     }
 }
