@@ -92,6 +92,9 @@ namespace Company_Person_Status__CPS_
                 changeStatus(user, (int)StatusTypes.Offline, awayTime);
                 label3.ForeColor = Color.Red;
                 label3.Text = "Offline";
+                label4.Visible = false;
+                stopTimer();
+                stopInactivityTimer();
                 MessageBox.Show("You exited from the system and your status become offline.", "Quit");  //This is important. Do not erase this otherwise system does not update the status in db
             }
         }
