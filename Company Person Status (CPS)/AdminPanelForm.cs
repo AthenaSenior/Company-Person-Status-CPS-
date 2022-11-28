@@ -82,6 +82,8 @@ namespace Company_Person_Status__CPS_
 
         private void button3_Click(object sender, EventArgs e)
         {
+            clientResponse = client.Get("");
+            allUsers = JsonConvert.DeserializeObject<Dictionary<string, User>>(clientResponse.Body.ToString());
             if (allUsersField.SelectedItem != null)
             {
                 DialogResult dialogResult = MessageBox.Show("Are you sure to remove " + allUsersField.SelectedItem.ToString() + " from the CPS system?", "Remove User", MessageBoxButtons.YesNo);
@@ -156,7 +158,7 @@ namespace Company_Person_Status__CPS_
             {
                 addUserButton.Enabled = false;
             }
-            else if (allUsersField.Items.Count < MAX_PEOPLE)
+            else
             {
                 addUserButton.Enabled = true;
             }

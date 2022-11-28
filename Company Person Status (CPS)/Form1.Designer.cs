@@ -589,7 +589,7 @@ namespace Company_Person_Status__CPS_
             this.status119.AutoSize = true;
             this.status119.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.status119.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.status119.Location = new System.Drawing.Point(880, 332);
+            this.status119.Location = new System.Drawing.Point(63, 109);
             this.status119.Name = "status119";
             this.status119.Size = new System.Drawing.Size(14, 21);
             this.status119.TabIndex = 86;
@@ -600,7 +600,7 @@ namespace Company_Person_Status__CPS_
             this.status120.AutoSize = true;
             this.status120.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.status120.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.status120.Location = new System.Drawing.Point(745, 332);
+            this.status120.Location = new System.Drawing.Point(200, 109);
             this.status120.Name = "status120";
             this.status120.Size = new System.Drawing.Size(14, 21);
             this.status120.TabIndex = 85;
@@ -611,7 +611,7 @@ namespace Company_Person_Status__CPS_
             this.status118.AutoSize = true;
             this.status118.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.status118.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.status118.Location = new System.Drawing.Point(610, 332);
+            this.status118.Location = new System.Drawing.Point(335, 109);
             this.status118.Name = "status118";
             this.status118.Size = new System.Drawing.Size(14, 21);
             this.status118.TabIndex = 84;
@@ -655,7 +655,7 @@ namespace Company_Person_Status__CPS_
             this.name121.AutoSize = true;
             this.name121.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.name121.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.name121.Location = new System.Drawing.Point(880, 250);
+            this.name121.Location = new System.Drawing.Point(66, 24);
             this.name121.Name = "name121";
             this.name121.Size = new System.Drawing.Size(14, 21);
             this.name121.TabIndex = 80;
@@ -666,7 +666,7 @@ namespace Company_Person_Status__CPS_
             this.name120.AutoSize = true;
             this.name120.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.name120.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.name120.Location = new System.Drawing.Point(745, 247);
+            this.name120.Location = new System.Drawing.Point(200, 24);
             this.name120.Name = "name120";
             this.name120.Size = new System.Drawing.Size(14, 21);
             this.name120.TabIndex = 79;
@@ -677,7 +677,7 @@ namespace Company_Person_Status__CPS_
             this.name119.AutoSize = true;
             this.name119.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.name119.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.name119.Location = new System.Drawing.Point(610, 247);
+            this.name119.Location = new System.Drawing.Point(333, 24);
             this.name119.Name = "name119";
             this.name119.Size = new System.Drawing.Size(14, 21);
             this.name119.TabIndex = 78;
@@ -985,7 +985,7 @@ namespace Company_Person_Status__CPS_
             this.status103.AutoSize = true;
             this.status103.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.status103.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.status103.Location = new System.Drawing.Point(335, 109);
+            this.status103.Location = new System.Drawing.Point(610, 332);
             this.status103.Name = "status103";
             this.status103.Size = new System.Drawing.Size(14, 21);
             this.status103.TabIndex = 50;
@@ -996,7 +996,7 @@ namespace Company_Person_Status__CPS_
             this.name103.AutoSize = true;
             this.name103.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.name103.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.name103.Location = new System.Drawing.Point(333, 24);
+            this.name103.Location = new System.Drawing.Point(610, 247);
             this.name103.Name = "name103";
             this.name103.Size = new System.Drawing.Size(14, 21);
             this.name103.TabIndex = 49;
@@ -1007,7 +1007,7 @@ namespace Company_Person_Status__CPS_
             this.status102.AutoSize = true;
             this.status102.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.status102.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.status102.Location = new System.Drawing.Point(200, 109);
+            this.status102.Location = new System.Drawing.Point(745, 332);
             this.status102.Name = "status102";
             this.status102.Size = new System.Drawing.Size(14, 21);
             this.status102.TabIndex = 48;
@@ -1018,7 +1018,7 @@ namespace Company_Person_Status__CPS_
             this.name102.AutoSize = true;
             this.name102.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.name102.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.name102.Location = new System.Drawing.Point(200, 24);
+            this.name102.Location = new System.Drawing.Point(745, 247);
             this.name102.Name = "name102";
             this.name102.Size = new System.Drawing.Size(14, 21);
             this.name102.TabIndex = 47;
@@ -1029,7 +1029,7 @@ namespace Company_Person_Status__CPS_
             this.status101.AutoSize = true;
             this.status101.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.status101.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.status101.Location = new System.Drawing.Point(63, 109);
+            this.status101.Location = new System.Drawing.Point(880, 332);
             this.status101.Name = "status101";
             this.status101.Size = new System.Drawing.Size(14, 21);
             this.status101.TabIndex = 46;
@@ -1048,7 +1048,7 @@ namespace Company_Person_Status__CPS_
             // pictureBox27
             // 
             this.pictureBox27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox27.Location = new System.Drawing.Point(880, 271);
+            this.pictureBox27.Location = new System.Drawing.Point(65, 48);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(59, 58);
             this.pictureBox27.TabIndex = 45;
@@ -1057,7 +1057,7 @@ namespace Company_Person_Status__CPS_
             // pictureBox26
             // 
             this.pictureBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox26.Location = new System.Drawing.Point(745, 271);
+            this.pictureBox26.Location = new System.Drawing.Point(200, 48);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(59, 58);
             this.pictureBox26.TabIndex = 44;
@@ -1066,7 +1066,7 @@ namespace Company_Person_Status__CPS_
             // pictureBox25
             // 
             this.pictureBox25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox25.Location = new System.Drawing.Point(610, 271);
+            this.pictureBox25.Location = new System.Drawing.Point(335, 48);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(59, 58);
             this.pictureBox25.TabIndex = 43;
@@ -1213,7 +1213,7 @@ namespace Company_Person_Status__CPS_
             // pictureBox12
             // 
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox12.Location = new System.Drawing.Point(335, 48);
+            this.pictureBox12.Location = new System.Drawing.Point(610, 271);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(59, 58);
             this.pictureBox12.TabIndex = 27;
@@ -1222,7 +1222,7 @@ namespace Company_Person_Status__CPS_
             // pictureBox8
             // 
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(200, 48);
+            this.pictureBox8.Location = new System.Drawing.Point(745, 271);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(59, 58);
             this.pictureBox8.TabIndex = 26;
@@ -1231,7 +1231,7 @@ namespace Company_Person_Status__CPS_
             // pictureBox7
             // 
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(65, 48);
+            this.pictureBox7.Location = new System.Drawing.Point(880, 271);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(59, 58);
             this.pictureBox7.TabIndex = 25;
@@ -1264,7 +1264,7 @@ namespace Company_Person_Status__CPS_
             this.name101.AutoSize = true;
             this.name101.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.name101.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.name101.Location = new System.Drawing.Point(66, 24);
+            this.name101.Location = new System.Drawing.Point(880, 250);
             this.name101.Name = "name101";
             this.name101.Size = new System.Drawing.Size(0, 21);
             this.name101.TabIndex = 0;

@@ -207,8 +207,7 @@ namespace Company_Person_Status__CPS_
 
         private void updateScreen(Dictionary<string, User> allUsers)
         {
-            index = userIcons.Count() - 1; // Local variables
-            userIndex = 20;
+            index = 0;
 
             if (loggedInUser != null)
                 label6.Text = allUsers.FirstOrDefault(x => x.Value.Id.Equals(loggedInUser.Id)).Value.FullName;
@@ -239,20 +238,12 @@ namespace Company_Person_Status__CPS_
                             }
                         default:
                             {
-                                if (index > (userIndex - allUsers.Count()))
+                                if (index < allUsers.Where(user => !user.Value.isDeleted).Count())
                                 {
                                     userIcons.ElementAt(index).BackgroundImage = Properties.Resources.no_image;
                                     employeeNames.ElementAt(index).Text = user.Value.FullName;
                                     printStatus(states.ElementAt(index), user.Value.StatusId);
-                                    index--;
-                                    userIndex++;
-                                }
-                                else if (index <= 15 && index >= 0)
-                                {
-                                    userIcons.ElementAt(index).BackgroundImage = Properties.Resources.no_image;
-                                    employeeNames.ElementAt(index).Text = user.Value.FullName;
-                                    printStatus(states.ElementAt(index), user.Value.StatusId);
-                                    index--;
+                                    index++;
                                 }
                                 break;
                             }
