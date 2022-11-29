@@ -17,7 +17,7 @@ namespace Company_Person_Status__CPS_
         public User loggedInUser;
         public static string userFullName = "";
         private readonly int inactivityConstant = 600;
-        private int index, userIndex, awayTime = 0, hour, minute, seconds, inactivityTime = 0;
+        private int index, awayTime = 0, hour, minute, seconds, inactivityTime = 0;
         IEnumerable<Label> states, employeeNames;
         IEnumerable<PictureBox> userIcons;
 
