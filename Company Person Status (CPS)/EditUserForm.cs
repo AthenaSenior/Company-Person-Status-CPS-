@@ -53,8 +53,7 @@ namespace Company_Person_Status__CPS_
                 {
                     user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
                     updateUser(user);
-                    MessageBox.Show("You changed the authorization of authorized person. Program is restarting.");
-                    Application.Restart();
+                    MessageBox.Show("Authorized people's field has changed. Please restart the program.");
                 }
                 else
                 {
@@ -76,8 +75,7 @@ namespace Company_Person_Status__CPS_
                 {
                     user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
                     updateUser(user);
-                    MessageBox.Show("You changed the authorization of authorized person. Program is restarting.");
-                    Application.Restart();
+                    MessageBox.Show("Authorized people's field has changed. Please restart the program.");
                 }
                 else
                 {
@@ -99,8 +97,7 @@ namespace Company_Person_Status__CPS_
                 {
                     user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
                     updateUser(user);
-                    MessageBox.Show("You changed the authorization of authorized person. Program is restarting.");
-                    Application.Restart();
+                    MessageBox.Show("Authorized people's field has changed. Please restart the program.");
                 }
                 else
                 {
@@ -115,7 +112,7 @@ namespace Company_Person_Status__CPS_
                 {
                     var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
                     updateUser(user);
-                    MessageBox.Show("You changed the authorization of authorized person. Program is restarting.");
+                    MessageBox.Show("Authorized people's field has changed. Please restart the program.");
                     Application.Restart();
                     return;
                 }
