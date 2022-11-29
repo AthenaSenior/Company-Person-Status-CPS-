@@ -312,9 +312,9 @@ namespace Company_Person_Status__CPS_
                 FullName = user.Value.FullName,
                 Password = user.Value.Password,
                 StatusId = newStatusId,
-                ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration + awayTime,
-                ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration + awayTime,
-                TodaysAwayDuration = user.Value.TodaysAwayDuration + awayTime,
+                ThisMonthAwayDuration = user.Value.ThisMonthAwayDuration + awayTime - 1,
+                ThisWeekAwayDuration = user.Value.ThisWeekAwayDuration + awayTime - 1,
+                TodaysAwayDuration = user.Value.TodaysAwayDuration + awayTime - 1,
                 Username = user.Value.Username,
                 isDeleted = false
             };

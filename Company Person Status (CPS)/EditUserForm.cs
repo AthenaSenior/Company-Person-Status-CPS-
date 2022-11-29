@@ -49,6 +49,13 @@ namespace Company_Person_Status__CPS_
                     MessageBox.Show("Cannot add another employer. There is only one: " + user.Value.FullName);
                     return;
                 }
+                else if(allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text)).Value.AuthorizationLevelId != comboBox1.SelectedIndex + 1)
+                {
+                    user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                    updateUser(user);
+                    MessageBox.Show("You changed the authorization of authorized person. Program is restarting.");
+                    Application.Restart();
+                }
                 else
                 {
                     user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
@@ -64,6 +71,13 @@ namespace Company_Person_Status__CPS_
                 {
                     MessageBox.Show("Cannot add another CEO. There is only one: " + user.Value.FullName);
                     return;
+                }
+                else if (allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text)).Value.AuthorizationLevelId != comboBox1.SelectedIndex + 1)
+                {
+                    user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                    updateUser(user);
+                    MessageBox.Show("You changed the authorization of authorized person. Program is restarting.");
+                    Application.Restart();
                 }
                 else
                 {
@@ -81,6 +95,13 @@ namespace Company_Person_Status__CPS_
                     MessageBox.Show("Cannot add another manager. There is only one: " + user.Value.FullName);
                     return;
                 }
+                else if (allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text)).Value.AuthorizationLevelId != comboBox1.SelectedIndex + 1)
+                {
+                    user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                    updateUser(user);
+                    MessageBox.Show("You changed the authorization of authorized person. Program is restarting.");
+                    Application.Restart();
+                }
                 else
                 {
                     user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
@@ -88,10 +109,21 @@ namespace Company_Person_Status__CPS_
                 }
             }
 
-            else
+            else 
             {
-                 var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
-                 updateUser(user);
+                if (allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text)).Value.AuthorizationLevelId != comboBox1.SelectedIndex + 1)
+                {
+                    var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                    updateUser(user);
+                    MessageBox.Show("You changed the authorization of authorized person. Program is restarting.");
+                    Application.Restart();
+                    return;
+                }
+                else
+                {
+                    var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
+                    updateUser(user);
+                }
             }
         }
 
