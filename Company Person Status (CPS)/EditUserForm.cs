@@ -41,6 +41,12 @@ namespace Company_Person_Status__CPS_
         // Methods //
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Length == 0 || textBox2.Text.Length == 0 || comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Please fill all fields.");
+                return;
+            }
+
             if (comboBox1.SelectedIndex == (int)AuthorizationTypes.Employer - 1)
             {
                 var user = allUsers.FirstOrDefault(x => x.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer);
