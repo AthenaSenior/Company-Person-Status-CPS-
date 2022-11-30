@@ -12,6 +12,8 @@ namespace Company_Person_Status__CPS_
     public partial class EditUserForm : Form
     {
         // Variables //
+        private readonly int MAX_EMPLOYEE = 21;
+
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "krI2GcYbBhPh2KkQ3TfoLb4I6LEXYlvt6HMosQZP",
@@ -114,12 +116,17 @@ namespace Company_Person_Status__CPS_
 
             else 
             {
-                if (allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text)).Value.AuthorizationLevelId != comboBox1.SelectedIndex + 1)
+                if (allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text)).Value.AuthorizationLevelId != comboBox1.SelectedIndex + 1 && allUsers.Where(x => x.Value.AuthorizationLevelId != (int)AuthorizationTypes.Employee).Count() == MAX_EMPLOYEE)
                 {
                     var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
                     updateUser(user);
                     MessageBox.Show("Authorized people's field has changed. Please restart the program.");
                     Application.Restart();
+                    return;
+                }
+                else if (allUsers.Where(x => x.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employee).Count() == MAX_EMPLOYEE)
+                {
+                    MessageBox.Show("There are already 21 employees. Cannot edit!");
                     return;
                 }
                 else

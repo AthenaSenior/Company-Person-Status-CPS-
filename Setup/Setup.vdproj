@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_780BAD6412E14BBFA2E8B2CD1725A37C"
+        "MsmKey" = "8:_5B899EDAA97544DCB7C3334682E27C11"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -82,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -114,10 +122,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_780BAD6412E14BBFA2E8B2CD1725A37C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5B899EDAA97544DCB7C3334682E27C11"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\.config\\Downloads\\output-onlinepngtools.ico"
-            "TargetName" = "8:output-onlinepngtools.ico"
+            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\output-onlinepngtools (3).ico"
+            "TargetName" = "8:output-onlinepngtools (3).ico"
             "Tag" = "8:"
             "Folder" = "8:_06E608F3C3424F719CA41A519CE3F51B"
             "Condition" = "8:"
@@ -219,7 +227,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Company Person Status Application"
         "ARPURLINFOABOUT" = "8:https://instagram.com/athenaapps"
-        "ARPPRODUCTICON" = "8:_780BAD6412E14BBFA2E8B2CD1725A37C"
+        "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -322,21 +330,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AA87EBD480BC4DD28A5CC89EED26F330"
-            {
-            "Name" = "8:Company Person Status"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_BC7DCAE8BA064489A3151D6E92E8CCED"
-            "Folder" = "8:_FC948C934B974A5CAB77D9BBC1BC8574"
-            "WorkingFolder" = "8:_06E608F3C3424F719CA41A519CE3F51B"
-            "Icon" = "8:_780BAD6412E14BBFA2E8B2CD1725A37C"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C3450A2D7110481F96A2C0750C38B9AE"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5291F56A6FF746A7A137E9EA65D8D744"
             {
             "Name" = "8:Company Person Status"
             "Arguments" = "8:"
@@ -347,7 +341,21 @@
             "Target" = "8:_BC7DCAE8BA064489A3151D6E92E8CCED"
             "Folder" = "8:_ACAF84A3FA4C4ACBB1414D69573324DB"
             "WorkingFolder" = "8:_06E608F3C3424F719CA41A519CE3F51B"
-            "Icon" = "8:_780BAD6412E14BBFA2E8B2CD1725A37C"
+            "Icon" = "8:_5B899EDAA97544DCB7C3334682E27C11"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A22E1F0C34314E4FB01E30E4722B90A9"
+            {
+            "Name" = "8:Company Person Status"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_BC7DCAE8BA064489A3151D6E92E8CCED"
+            "Folder" = "8:_FC948C934B974A5CAB77D9BBC1BC8574"
+            "WorkingFolder" = "8:_06E608F3C3424F719CA41A519CE3F51B"
+            "Icon" = "8:_5B899EDAA97544DCB7C3334682E27C11"
             "Feature" = "8:"
             }
         }
@@ -369,7 +377,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_06DB70A3C034493BBB0E3A27AA0BDCC7"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Yüklemeyi Onayla"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
@@ -391,7 +399,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_374E11100D77430884A7984ADC83F291"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Yükleme Klasörü"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
@@ -413,7 +421,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_37A2C25AFE004E9C9388D6B342BECC88"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Hoş Geldiniz"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"
@@ -470,7 +478,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_EB9181E49C244B12BD7ABF01881ACE24"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:İlerleme Durumu"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
@@ -520,7 +528,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_820995A6CFBB442EAB44F536CF8428B4"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:İlerleme Durumu"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
@@ -564,7 +572,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_6BBC7D2520B84D66A740AC248CD53D98"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Yükleme Klasörü"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFolderDlg.wid"
@@ -599,7 +607,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_9227F36C8F4B4EAA9F8F2B4CC814D60E"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Yüklemeyi Onayla"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
@@ -621,7 +629,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_E846969578B94605AA295A960D695BCE"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Hoş Geldiniz"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
@@ -678,7 +686,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_6E86B1157AA9442BBD17B3EE551B5B6A"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Bitti"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
@@ -709,7 +717,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_D9EE44653F9C4F8FAAB34BF5D423EFB2"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Bitti"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
