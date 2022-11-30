@@ -49,6 +49,13 @@ namespace Company_Person_Status__CPS_
                 return;
             }
 
+
+            if (allUsers.FirstOrDefault(x => x.Value.Username.Equals(textBox2.Text) && !x.Value.isDeleted).Key != null && !allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text)).Value.Username.Equals(textBox2.Text))
+            {
+                MessageBox.Show("Username has taken.");
+                return;
+            }
+
             if (comboBox1.SelectedIndex == (int)AuthorizationTypes.Employer - 1)
             {
                 var user = allUsers.FirstOrDefault(x => x.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer);
@@ -116,7 +123,8 @@ namespace Company_Person_Status__CPS_
 
             else 
             {
-                if (allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text)).Value.AuthorizationLevelId != comboBox1.SelectedIndex + 1 && allUsers.Where(x => x.Value.AuthorizationLevelId != (int)AuthorizationTypes.Employee).Count() == MAX_EMPLOYEE)
+                if (allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text)).Value.AuthorizationLevelId != comboBox1.SelectedIndex + 1 
+                    && allUsers.Where(x => x.Value.AuthorizationLevelId != (int)AuthorizationTypes.Employee).Count() == MAX_EMPLOYEE)
                 {
                     var user = allUsers.FirstOrDefault(x => x.Value.FullName.Equals(label1.Text));
                     updateUser(user);
@@ -124,7 +132,7 @@ namespace Company_Person_Status__CPS_
                     Application.Restart();
                     return;
                 }
-                else if (allUsers.Where(x => x.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employee).Count() == MAX_EMPLOYEE)
+                else if (allUsers.Where(x => x.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employee && !x.Value.isDeleted).Count() == MAX_EMPLOYEE)
                 {
                     MessageBox.Show("There are already 21 employees. Cannot edit!");
                     return;

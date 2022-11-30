@@ -49,8 +49,13 @@ namespace Company_Person_Status__CPS_
                 return;
             }
 
+            if (allUsers.FirstOrDefault(x => x.Value.Username.Equals(textBox2.Text) && !x.Value.isDeleted).Key != null)
+            {
+                MessageBox.Show("Username has taken.");
+                return;
+            }
 
-            if(comboBox1.SelectedIndex == (int) AuthorizationTypes.Employer - 1)
+            if (comboBox1.SelectedIndex == (int) AuthorizationTypes.Employer - 1)
             {
                 var user = allUsers.FirstOrDefault(x => x.Value.AuthorizationLevelId == (int)AuthorizationTypes.Employer);
                 if (user.Key != null)
